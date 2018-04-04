@@ -14,7 +14,7 @@
   key: satoshi
   code: btc
   coin: true
-  rpc: http://username:password@127.0.0.1:18332
+  rpc: http://rishab12345:arorarishab123@127.0.0.1:18332
   assets:
     balance: 333333
     accounts:
