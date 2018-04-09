@@ -40,8 +40,9 @@ module Withdraws
     end
 
     def withdraw_params
+      # binding.pry
       params[:withdraw][:fee] = channel.fee
-      params[:withdraw][:currency] = channel.currency
+      # params[:withdraw][:currency] = channel.currency
       params[:withdraw][:member_id] = current_user.id
       params.require(:withdraw).permit(:fund_source, :member_id, :currency, :sum)
     end

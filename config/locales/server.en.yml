@@ -297,6 +297,7 @@ en:
       doge: DOGE
       pts: PTS
       ltc: LTC
+      inr: INR
   currency:
     satoshi:
       key: BTC
@@ -317,6 +318,11 @@ en:
       key: CNY
       code: CNY
       name: Chinese Yuan
+      format: '0,0.00'
+    rupee:
+      key: INR
+      code: INR
+      name: Indian Rupee
       format: '0,0.00'
     dogecoin:
       key: DOG
@@ -684,13 +690,16 @@ en:
         btc-assets: BTC Assets
         cny-assets: CNY Assets
         eth-assets: ETH Assets
+        inr-assets: INR Assets
       liability_tabs:
         verify-btc: Verify My BTC Assets
         verify-cny: Verify My CNY Assets
         verify-eth: Verify My ETH Assets
+        verify-inr: Verify My INR Assets
         btc-assets-total: 'Total BTC assets of exchange: '
         cny-assets-total: 'Total CNY assets of exchange: '
         eth-assets-total: 'Total ETH assets of exchange: '
+        inr-assets-total: 'Total INR assets of exchange: '
       liability_proof:
         title: Proof of Liabilities
         intro: As an exchange, our liabilities refer to the sum of money (in both
@@ -724,16 +733,30 @@ en:
         description: " <p>For supervision, you can inquiry the balance of our deposit
           account:</p> <p>Bank: %{bank}</p> <p>Account： %{address}</p> <p>Inquiry
           Password： %{password}</p> <p>Inquiry Tel.： %{tel}</p>"
+      inr_assets:
+        title: INR Assets
+        intro: All of exchange's INR assets are listed here.
+        total: Total INR Assets
+        description: " <p>For supervision, you can inquiry the balance of our deposit
+          account:</p> <p>Bank: %{bank}</p> <p>Account： %{address}</p> <p>Inquiry
+          Password： %{password}</p> <p>Inquiry Tel.： %{tel}</p>"
       partial_tree:
         success: 'Success! Verification data generated at: %{timestamp}'
     funds:
       show:
         account_history: Account History
         cny_format: '0.00'
+        inr_format: '0.00'
         btc_format: '0.00000000'
         eth_format: '0.00000000'
         reason:
           cny:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          inr:
             strike_add: Plus
             strike_sub: Sub
             deposit: Deposit
@@ -793,6 +816,7 @@ en:
         all: All Markets
         all_html: "<i class='fa fa-check'></i><span>All Markets</span>"
         cny_html: "<i class='fa fa-check'></i><span>CNY Markets</span>"
+        inr_html: "<i class='fa fa-check'></i><span>INR Markets</span>"
         btc_html: "<i class='fa fa-check'></i><span>BTC Markets</span>"
         price: Price
         change: "24h %"
@@ -1380,6 +1404,7 @@ en:
       cny: CNY
       btc: BTC
       eth: ETH
+      inr: INR
     order:
       state:
         done: DONE

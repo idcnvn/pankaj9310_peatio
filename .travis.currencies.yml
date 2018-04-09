@@ -20,3 +20,15 @@
     accounts:
       -
         address: 1dice8EMZmqKvrGE4Qc9bUFf9PX3xaYDp
+- id: 4
+  key: rupee
+  code: inr
+  coin: false
+  assets:
+    balance: 92343242.56
+    accounts:
+      -
+        bank: 'State Bank of India'
+        address: '6225 0885 6022 3501'
+        password: '111111'
+        tel: '95555'

@@ -44,6 +44,7 @@ app.controller 'WithdrawsController', ['$scope', '$stateParams', '$http', '$gon'
   @createWithdraw = (currency) ->
     withdraw_channel = WithdrawChannel.findBy('currency', currency)
     account = withdraw_channel.account()
+    debugger
     data = { withdraw: { member_id: current_user.id, currency: currency, sum: @withdraw.sum, fund_source: _selectedFundSourceId } }
 
     if current_user.app_activated or current_user.sms_activated
@@ -53,9 +54,10 @@ app.controller 'WithdrawsController', ['$scope', '$stateParams', '$http', '$gon'
       data.two_factor = { type: type, otp: otp }
       data.captcha = $('#captcha').val()
       data.captcha_key = $('#captcha_key').val()
+      debugger
 
     $('.form-submit > input').attr('disabled', 'disabled')
-
+    debugger
     $http.post("/withdraws/#{withdraw_channel.resource_name}", data)
       .error (responseText) ->
         $.publish 'flash', { message: responseText }
@@ -68,7 +70,7 @@ app.controller 'WithdrawsController', ['$scope', '$stateParams', '$http', '$gon'
     @withdraw.sum = Number($scope.account.balance)
 
   $scope.openFundSourceManagerPanel = ->
-    if $scope.currency == $gon.fiat_currency
+    if $scope.currency == "cny" || $scope.currency == "inr"
       template = '/templates/fund_sources/bank.html'
       className = 'ngdialog-theme-default custom-width'
     else

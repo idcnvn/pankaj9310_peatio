@@ -9,7 +9,6 @@ app.controller 'WithdrawHistoryController', ($scope, $stateParams, $http) ->
 
   @noWithdraw = ->
     @withdraws.length == 0
-
   @refresh = ->
     ctrl.withdraws = ctrl.account.withdraws().slice(0, 3)
     $scope.$apply()
