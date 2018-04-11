@@ -20,10 +20,18 @@ Peatio::Application.configure do
   config.session_store :redis_store, :key => '_peatio_session', :expire_after => ENV['SESSION_EXPIRE'].to_i.minutes
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.delivery_method = :file
-  config.action_mailer.file_settings = { location: 'tmp/mails' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => 'apikey',
+    :password => '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',
+    :domain => 'godalla.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   config.action_mailer.default_url_options = { :host => ENV["URL_HOST"] }
 
