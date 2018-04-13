@@ -294,6 +294,7 @@ en:
     cbi: Central Bank of India
     hdfc: Housing Development Finance Corporation
     icic: Industrial Credit and Investment Corporation of India Limited
+    paypal: Paypal
   market:
     currency:
       btc: BTC

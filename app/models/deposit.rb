@@ -68,6 +68,23 @@ class Deposit < ActiveRecord::Base
   def txid_desc
     txid
   end
+  serialize :notification_params, Hash
+  def paypal_url(return_path)
+    binding.pry
+    values = {
+        business: "merchant@godalla.com",
+        cmd: "_xclick",
+        upload: 1,
+        return: "#{ENV['app_host']}#{return_path}",
+        invoice: id,
+        amount: self.amount,
+        item_name: self.currency,
+        item_number: self.id,
+        quantity: '1',
+        notify_url: "#{ENV['app_host']}/deposits/banks/hook"
+    }
+    "#{ENV['paypal_host']}/cgi-bin/webscr?" + values.to_query
+  end
 
   class << self
     def channel

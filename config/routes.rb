@@ -78,7 +78,8 @@ Peatio::Application.routes.draw do
         resources w.resource_name
       end
     end
-
+    post "/deposits/banks/hook" => "deposits/banks#hook"
+    # get "/deposits/banks/:id" => "deposits/banks#show"
     resources :account_versions, :only => :index
 
     resources :exchange_assets, :controller => 'assets' do

@@ -28,6 +28,7 @@ en:
       cbi: Central Bank of India
       hdfc: Housing Development Finance Corporation
       icic: Industrial Credit and Investment Corporation of India Limited
+      paypal: Paypal
     fund_sources:
       manage_bank_account: Bank Account Management
       manage_bank_account_desc: To facilitate the choice of bank withdrawals address
