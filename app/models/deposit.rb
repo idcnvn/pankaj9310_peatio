@@ -70,7 +70,6 @@ class Deposit < ActiveRecord::Base
   end
   serialize :notification_params, Hash
   def paypal_url(return_path)
-    binding.pry
     values = {
         business: "merchant@godalla.com",
         cmd: "_xclick",

@@ -17,11 +17,12 @@ app.controller 'DepositsController', ['$scope', '$stateParams', '$http', '$filte
     $('.form-submit > input').attr('disabled', 'disabled')
 
     $http.post("/deposits/#{deposit_channel.resource_name}", { deposit: data})
-      .error (responseText) ->
-        $.publish 'flash', {message: responseText }
-      .finally ->
+      .success (responseText) ->
         depositCtrl.deposit = {}
         $('.form-submit > input').removeAttr('disabled')
+        window.location.href = responseText
+      .error (responseText) ->
+        $.publish 'flash', {message: responseText }
 
   $scope.openFundSourceManagerPanel = ->
     ngDialog.open

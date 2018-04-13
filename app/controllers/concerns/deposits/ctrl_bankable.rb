@@ -9,8 +9,7 @@ module Deposits
     def create
       @deposit = model_kls.new(deposit_params)
       if @deposit.save
-        redirect_to @deposit.paypal_url(deposits_banks_hook_url(@deposit)) and return
-        # render nothing: true
+        render text: @deposit.paypal_url(deposits_banks_hook_url(@deposit)), status: 200
       else
         render text: @deposit.errors.full_messages.join, status: 403
       end
