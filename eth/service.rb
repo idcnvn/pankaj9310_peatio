@@ -7,7 +7,7 @@ while true
         for tx in block["transactions"]
                 if accounts.include? tx["to"]
                         puts tx
-                        postData = Net::HTTP.post_form(URI.parse('https://yourwebsite.com/webhooks/eth'), {'type'=>'transaction', 'hash'=>tx["hash"]})
+                        postData = Net::HTTP.post_form(URI.parse('http://localhost/webhooks/eth'), {'type'=>'transaction', 'hash'=>tx["hash"]})
                         sleep 5
                 end
         end
