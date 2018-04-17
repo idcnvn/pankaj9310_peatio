@@ -1,35 +1,45 @@
 module Deposits
   module CtrlBankable
     extend ActiveSupport::Concern
-
+    
     included do
       before_filter :fetch
+      protect_from_forgery with: :null_session
+      skip_before_action :fetch, :only => [:hook]
+      skip_before_action :auth_member!, :only => [:hook]
+      skip_before_action :authenticate_token!, :only => [:hook]
+      skip_before_action :verify_authenticity_token, :only => [:hook]
+      skip_before_action :auth_verified!, :only => [:hook]
+      skip_before_action :auth_activated!, :only =>[:hook]
     end
 
     def create
       @deposit = model_kls.new(deposit_params)
       if @deposit.save
-        render text: @deposit.paypal_url(deposits_banks_hook_url(@deposit)), status: 200
+        render text: @deposit.paypal_url(hook_url(@deposit)), status: 200
       else
         render text: @deposit.errors.full_messages.join, status: 403
       end
     end
-
+    def show
+    end
     def destroy
       @deposit = current_user.deposits.find(params[:id])
       @deposit.cancel!
       render nothing: true
     end
 
-    # protect_from_forgery with: :null_session
+    
     def hook
-      binding.pry
+      puts 'hello'
       params.permit! # Permit all Paypal input params
       status = params[:payment_status]
-      if status == "Completed"
-        @deposit = Deposit.find params[:invoice]
-        puts @deposit
-        @deposit.update_attributes notification_params: params, status: status, transaction_id: params[:txn_id], purchased_at: Time.now
+      @deposit = Deposit.find params[:invoice]
+      puts @deposit
+      if status == "Pending"
+        @deposit.update_attributes confirmations: status, txid: params[:txn_id], done_at: Time.now
+      elsif status == "Completed"
+        @deposit.update_attributes aasm_state: 'accepted', confirmations: status, txid: params[:txn_id], done_at: Time.now
       end
       render nothing: true
     end

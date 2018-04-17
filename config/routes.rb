@@ -68,6 +68,7 @@ Peatio::Application.routes.draw do
         resources d.resource_name do
           collection do
             post :gen_address
+            post :hook
           end
         end
       end
@@ -78,7 +79,7 @@ Peatio::Application.routes.draw do
         resources w.resource_name
       end
     end
-    post "/deposits/banks/hook" => "deposits/banks#hook"
+    post "/hook" => "deposits/banks#hook"
     # get "/deposits/banks/:id" => "deposits/banks#show"
     resources :account_versions, :only => :index
 

@@ -71,16 +71,16 @@ class Deposit < ActiveRecord::Base
   serialize :notification_params, Hash
   def paypal_url(return_path)
     values = {
-        business: "merchant@godalla.com",
+        business: "pankaj9310-facilitator@gmail.com",
         cmd: "_xclick",
         upload: 1,
-        return: "#{ENV['app_host']}#{return_path}",
+        return:  "#{ENV['app_host']}/#{return_path.split('/')[-1]}",
         invoice: id,
         amount: self.amount,
         item_name: self.currency,
         item_number: self.id,
         quantity: '1',
-        notify_url: "#{ENV['app_host']}/deposits/banks/hook"
+        notify_url: "#{ENV['app_host']}/hook"
     }
     "#{ENV['paypal_host']}/cgi-bin/webscr?" + values.to_query
   end
