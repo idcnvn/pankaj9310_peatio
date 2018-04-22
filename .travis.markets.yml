@@ -10,3 +10,9 @@
   quote_unit: inr
   bid: {fee: 0, currency: inr, fixed: 2}
   ask: {fee: 0, currency: btc, fixed: 4}
+- id: btcusd
+  code: 9
+  base_unit: btc
+  quote_unit: usd
+  bid: {fee: 0, currency: usd, fixed: 2}
+  ask: {fee: 0, currency: btc, fixed: 4}

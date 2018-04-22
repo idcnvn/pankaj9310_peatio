@@ -21,8 +21,7 @@ module Deposits
         render text: @deposit.errors.full_messages.join, status: 403
       end
     end
-    def show
-    end
+    
     def destroy
       @deposit = current_user.deposits.find(params[:id])
       @deposit.cancel!
@@ -31,11 +30,9 @@ module Deposits
 
     
     def hook
-      puts 'hello'
       params.permit! # Permit all Paypal input params
       status = params[:payment_status]
       @deposit = Deposit.find params[:invoice]
-      puts @deposit
       if status == "Pending"
         @deposit.update_attributes confirmations: status, txid: params[:txn_id], done_at: Time.now
       elsif status == "Completed"

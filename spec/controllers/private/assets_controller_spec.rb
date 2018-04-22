@@ -22,6 +22,7 @@ describe Private::AssetsController do
       it { expect(assigns(:btc_account)).to be_nil }
       it { expect(assigns(:cny_account)).to be_nil }
       it { expect(assigns(:inr_account)).to be_nil }
+      it { expect(assigns(:usd_account)).to be_nil }
     end
   end
 

@@ -50,46 +50,32 @@ en:
         btc: BTC
         inr: INR
         eth: ETH
+        usd: USD
+      deposit_currency:
+        desc: "To deposit via Bank transfer, please follow these steps:"
+        desc_item_1: "1. Submit the form to get the identification code."
+        desc_item_2: "2. Transfer the money to exchange's bank account. Please make sure your referral code was written on the form you fill in."
+        desc_item_3: "3. Your deposit will be confirmed as soon as the money is received."
+        attention: "Attention: The name of your bank account must be the same as your account name on our site, otherwise your deposit may fail."
+        from: From
+        to: To
+        deposit_name: Your Name
+        deposit_account: Deposit Account
+        add: Add
+        manage: Manage
+        amount: Deposit Amount
+        min_amount: At least 10 yuan
+        to_account: Account
+        to_name: Name
+        to_bank_name: Bank Name
+        opening_bank_name: Account where created
+        remark: 'Referral Code (Transfer identification code)'
       deposit_cny:
         title: Chinese Yuan Deposit
-        desc: "To deposit via Bank transfer, please follow these steps:"
-        desc_item_1: "1. Submit the form to get the identification code."
-        desc_item_2: "2. Transfer the money to exchange's bank account. Please make sure your referral code was written on the form you fill in."
-        desc_item_3: "3. Your deposit will be confirmed as soon as the money is received."
-        attention: "Attention: The name of your bank account must be the same as your account name on our site, otherwise your deposit may fail."
-        from: From
-        to: To
-        deposit_name: Your Name
-        deposit_account: Deposit Account
-        add: Add
-        manage: Manage
-        amount: Deposit Amount
-        min_amount: At least 10 yuan
-        to_account: Account
-        to_name: Name
-        to_bank_name: Bank Name
-        opening_bank_name: Account where created
-        remark: 'Referral Code (Transfer identification code)'
       deposit_inr:
         title: Indian Rupee Deposit
-        desc: "To deposit via Bank transfer, please follow these steps:"
-        desc_item_1: "1. Submit the form to get the identification code."
-        desc_item_2: "2. Transfer the money to exchange's bank account. Please make sure your referral code was written on the form you fill in."
-        desc_item_3: "3. Your deposit will be confirmed as soon as the money is received."
-        attention: "Attention: The name of your bank account must be the same as your account name on our site, otherwise your deposit may fail."
-        from: From
-        to: To
-        deposit_name: Your Name
-        deposit_account: Deposit Account
-        add: Add
-        manage: Manage
-        amount: Deposit Amount
-        min_amount: At least 10 yuan
-        to_account: Account
-        to_name: Name
-        to_bank_name: Bank Name
-        opening_bank_name: Account where created
-        remark: 'Referral Code (Transfer identification code)'
+      deposit_usd:
+        title: US Dollar Deposit
       deposit_btc:
         title: BTC Deposit
       deposit_eth:
@@ -117,7 +103,6 @@ en:
         state_and_action: "State/Action"
         cancel: cancel
         no_data: There is no history data
-
         submitting: Submitting
         cancelled: Cancelled
         submitted: Submitted
@@ -126,22 +111,7 @@ en:
         checked: Checked
         warning: Warning
         suspect: Suspect
-
-      withdraw_cny:
-        title: Chinese Yuan Withdraw
-        intro: Select the bank to cash withdrawal amount and enter the account number and complete submission.
-        intro_2: Your bank account and name must be consistent with the real-name authentication name.
-        attention: "Working Hours: 9:00 - 18:00"
-        account_name: Account Name
-        withdraw_address: Withdraw Address
-        balance: Balance
-        withdraw_amount: Withdraw Amount
-        manage_withdraw: Manage Withdraw
-        fee_explain: About Fee
-        min: At least
-        withdraw_all: Withdraw all
-      withdraw_inr:
-        title: Indian Rupee Withdraw
+      withdraw_currency:
         intro: Select the bank to cash withdrawal amount and enter the account number and complete submission.
         intro_2: Your bank account and name must be consistent with the real-name authentication name.
         attention: "Working Hours: 10:00 - 16:00"
@@ -153,6 +123,12 @@ en:
         fee_explain: About Fee
         min: At least
         withdraw_all: Withdraw all
+      withdraw_cny:
+        title: Chinese Yuan Withdraw
+      withdraw_inr:
+        title: Indian Rupee Withdraw
+      withdraw_usd:
+        title: US Dallar Withdraw
       withdraw_btc:
         title: BTC Withdraw
       withdraw_eth:
@@ -180,7 +156,6 @@ en:
         state_and_action: "State/Action"
         cancel: Cancel
         no_data: There is no history data
-
         submitting: Submitting
         submitted: Submitted
         rejected: Rejected
@@ -213,3 +188,4 @@ en:
         btc: BTC Market
         inr: INR Market
         eth: ETH Market
+        usd: USD Market

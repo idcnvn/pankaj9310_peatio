@@ -304,6 +304,7 @@ en:
       pts: PTS
       ltc: LTC
       inr: INR
+      usd: USD
   currency:
     satoshi:
       key: BTC
@@ -329,6 +330,11 @@ en:
       key: INR
       code: INR
       name: Indian Rupee
+      format: '0,0.00'
+    dollar:
+      key: USD
+      code: USD
+      name: US Dollar
       format: '0,0.00'
     dogecoin:
       key: DOG
@@ -697,15 +703,18 @@ en:
         cny-assets: CNY Assets
         eth-assets: ETH Assets
         inr-assets: INR Assets
+        usd-assets: USD Assets
       liability_tabs:
         verify-btc: Verify My BTC Assets
         verify-cny: Verify My CNY Assets
         verify-eth: Verify My ETH Assets
         verify-inr: Verify My INR Assets
+        verify-usd: Verify My USD Assets
         btc-assets-total: 'Total BTC assets of exchange: '
         cny-assets-total: 'Total CNY assets of exchange: '
         eth-assets-total: 'Total ETH assets of exchange: '
         inr-assets-total: 'Total INR assets of exchange: '
+        usd-assets-total: 'Total USD assets of exchange: '
       liability_proof:
         title: Proof of Liabilities
         intro: As an exchange, our liabilities refer to the sum of money (in both
@@ -746,6 +755,13 @@ en:
         description: " <p>For supervision, you can inquiry the balance of our deposit
           account:</p> <p>Bank: %{bank}</p> <p>Account： %{address}</p> <p>Inquiry
           Password： %{password}</p> <p>Inquiry Tel.： %{tel}</p>"
+      usd_assets:
+        title: USD Assets
+        intro: All of exchange's USD assets are listed here.
+        total: Total USD Assets
+        description: " <p>For supervision, you can inquiry the balance of our deposit
+          account:</p> <p>Bank: %{bank}</p> <p>Account： %{address}</p> <p>Inquiry
+          Password： %{password}</p> <p>Inquiry Tel.： %{tel}</p>"
       partial_tree:
         success: 'Success! Verification data generated at: %{timestamp}'
     funds:
@@ -753,6 +769,7 @@ en:
         account_history: Account History
         cny_format: '0.00'
         inr_format: '0.00'
+        usd_format: '0.00'
         btc_format: '0.00000000'
         eth_format: '0.00000000'
         reason:
@@ -763,6 +780,12 @@ en:
             withdraw: Withdraw
             fix: Fix
           inr:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          usd:
             strike_add: Plus
             strike_sub: Sub
             deposit: Deposit
@@ -823,6 +846,8 @@ en:
         all_html: "<i class='fa fa-check'></i><span>All Markets</span>"
         cny_html: "<i class='fa fa-check'></i><span>CNY Markets</span>"
         inr_html: "<i class='fa fa-check'></i><span>INR Markets</span>"
+        usd_html: "<i class='fa fa-check'></i><span>USD Markets</span>"
+        eth_html: "<i class='fa fa-check'></i><span>ETH Markets</span>"
         btc_html: "<i class='fa fa-check'></i><span>BTC Markets</span>"
         price: Price
         change: "24h %"
@@ -1287,6 +1312,7 @@ en:
           one: Pending withdrawal Orders
           all: Twenty-four hours Orders
           empty: No Data
+
         show:
           process: Process
           succeed: Succeed
@@ -1295,6 +1321,8 @@ en:
           reject_confirm: Confirm Reject?
           withdraw: Withdraw
           empty: No Data
+        update:
+          notice: Application updated.
       satoshis:
         index:
           one: Pending withdrawals
@@ -1411,6 +1439,7 @@ en:
       btc: BTC
       eth: ETH
       inr: INR
+      usd: USD
     order:
       state:
         done: DONE

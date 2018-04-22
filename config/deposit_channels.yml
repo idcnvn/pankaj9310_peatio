@@ -19,13 +19,23 @@
   currency: eth
   min_confirm: 1
   max_confirm: 6
-- id: 800
-  key: bank
-  currency: inr
-  sort_order: 3
-  bank_accounts:
-    -
-      bank: 'Your Bank Name'
-      branch: 'Your Bank Branch'
-      holder: 'Your Account Holder'
-      account: 'Your Account Number'
+# - id: 800
+#   key: bank
+#   currency: inr
+#   sort_order: 3
+#   bank_accounts:
+#     -
+#       bank: 'Your Bank Name'
+#       branch: 'Your Bank Branch'
+#       holder: 'Your Account Holder'
+#       account: 'Your Account Number'
+# - id: 900
+#   key: bank
+#   currency: usd
+#   sort_order: 4
+#   bank_accounts:
+#     -
+#       bank: 'Your Bank Name'
+#       branch: 'Your Bank Branch'
+#       holder: 'Your Account Holder'
+#       account: 'Your Account Number'
