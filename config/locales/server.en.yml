@@ -305,6 +305,7 @@ en:
       ltc: LTC
       inr: INR
       usd: USD
+      aud: AUD
   currency:
     satoshi:
       key: BTC
@@ -335,6 +336,11 @@ en:
       key: USD
       code: USD
       name: US Dollar
+      format: '0,0.00'
+    adollar:
+      key: AUD
+      code: AUD
+      name: Australian Dollar
       format: '0,0.00'
     dogecoin:
       key: DOG
@@ -704,17 +710,20 @@ en:
         eth-assets: ETH Assets
         inr-assets: INR Assets
         usd-assets: USD Assets
+        aud-assets: AUD Assets
       liability_tabs:
         verify-btc: Verify My BTC Assets
         verify-cny: Verify My CNY Assets
         verify-eth: Verify My ETH Assets
         verify-inr: Verify My INR Assets
         verify-usd: Verify My USD Assets
+        verify-aud: Verify My AUD Assets
         btc-assets-total: 'Total BTC assets of exchange: '
         cny-assets-total: 'Total CNY assets of exchange: '
         eth-assets-total: 'Total ETH assets of exchange: '
         inr-assets-total: 'Total INR assets of exchange: '
         usd-assets-total: 'Total USD assets of exchange: '
+        aud-assets-total: 'Total AUD assets of exchange: '
       liability_proof:
         title: Proof of Liabilities
         intro: As an exchange, our liabilities refer to the sum of money (in both
@@ -762,6 +771,13 @@ en:
         description: " <p>For supervision, you can inquiry the balance of our deposit
           account:</p> <p>Bank: %{bank}</p> <p>Account： %{address}</p> <p>Inquiry
           Password： %{password}</p> <p>Inquiry Tel.： %{tel}</p>"
+      aud_assets:
+        title: AUD Assets
+        intro: All of exchange's AUD assets are listed here.
+        total: Total AUD Assets
+        description: " <p>For supervision, you can inquiry the balance of our deposit
+          account:</p> <p>Bank: %{bank}</p> <p>Account： %{address}</p> <p>Inquiry
+          Password： %{password}</p> <p>Inquiry Tel.： %{tel}</p>"
       partial_tree:
         success: 'Success! Verification data generated at: %{timestamp}'
     funds:
@@ -770,6 +786,7 @@ en:
         cny_format: '0.00'
         inr_format: '0.00'
         usd_format: '0.00'
+        aud_format: '0.00'
         btc_format: '0.00000000'
         eth_format: '0.00000000'
         reason:
@@ -786,6 +803,12 @@ en:
             withdraw: Withdraw
             fix: Fix
           usd:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          aud:
             strike_add: Plus
             strike_sub: Sub
             deposit: Deposit
@@ -847,6 +870,7 @@ en:
         cny_html: "<i class='fa fa-check'></i><span>CNY Markets</span>"
         inr_html: "<i class='fa fa-check'></i><span>INR Markets</span>"
         usd_html: "<i class='fa fa-check'></i><span>USD Markets</span>"
+        aud_html: "<i class='fa fa-check'></i><span>AUD Markets</span>"
         eth_html: "<i class='fa fa-check'></i><span>ETH Markets</span>"
         btc_html: "<i class='fa fa-check'></i><span>BTC Markets</span>"
         price: Price
@@ -1440,6 +1464,7 @@ en:
       eth: ETH
       inr: INR
       usd: USD
+      aud: AUD
     order:
       state:
         done: DONE

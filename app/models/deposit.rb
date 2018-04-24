@@ -74,7 +74,7 @@ class Deposit < ActiveRecord::Base
         business: "pankaj9310-facilitator@gmail.com",
         cmd: "_xclick",
         upload: 1,
-        return:  "#{ENV['app_host']}/#{return_path.split('/')[-1]}",
+        return:  "#{'http://localhost:3000/settings'}",
         invoice: id,
         amount: self.amount,
         item_name: self.currency,

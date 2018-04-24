@@ -36,9 +36,10 @@ module Deposits
       if status == "Pending"
         @deposit.update_attributes confirmations: status, txid: params[:txn_id], done_at: Time.now
       elsif status == "Completed"
+        @deposit.charge!(params[:txid])
         @deposit.update_attributes aasm_state: 'accepted', confirmations: status, txid: params[:txn_id], done_at: Time.now
       end
-      render nothing: true
+      redirect_to root_path()
     end
 
     private

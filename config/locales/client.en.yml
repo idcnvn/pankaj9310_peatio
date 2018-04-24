@@ -51,6 +51,7 @@ en:
         inr: INR
         eth: ETH
         usd: USD
+        aud: AUD
       deposit_currency:
         desc: "To deposit via Bank transfer, please follow these steps:"
         desc_item_1: "1. Submit the form to get the identification code."
@@ -64,7 +65,7 @@ en:
         add: Add
         manage: Manage
         amount: Deposit Amount
-        min_amount: At least 10 yuan
+        min_amount: At least 10 
         to_account: Account
         to_name: Name
         to_bank_name: Bank Name
@@ -76,6 +77,8 @@ en:
         title: Indian Rupee Deposit
       deposit_usd:
         title: US Dollar Deposit
+      deposit_aud:
+        title: Australian Dollar Deposit
       deposit_btc:
         title: BTC Deposit
       deposit_eth:
@@ -129,6 +132,8 @@ en:
         title: Indian Rupee Withdraw
       withdraw_usd:
         title: US Dallar Withdraw
+      withdraw_aud:
+        title: Australian Dollar Deposit
       withdraw_btc:
         title: BTC Withdraw
       withdraw_eth:
@@ -189,3 +194,4 @@ en:
         inr: INR Market
         eth: ETH Market
         usd: USD Market
+        aud: AUD Market

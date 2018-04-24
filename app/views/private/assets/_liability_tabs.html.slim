@@ -4,6 +4,7 @@
     li:        a.cny-proof href="#cny-proof" data-toggle="tab" == t('.verify-cny')
     li:        a.inr-proof href="#inr-proof" data-toggle="tab" == t('.verify-inr')
     li:        a.usd-proof href="#usd-proof" data-toggle="tab" == t('.verify-usd')
+    li:        a.aud-proof href="#aud-proof" data-toggle="tab" == t('.verify-aud')
 
   .tab-content
     #btc-proof.tab-pane.active: .trade-wrapper
@@ -35,3 +36,10 @@
           == t("currency.icon.usd")
           = @usd_proof.sum
       = render 'liability_data', account: @usd_account, proof: @usd_proof
+    #usd-proof.tab-pane:        .trade-wrapper
+      .assets
+        span.title = t('.aud-assets-total')
+        span.currency
+          == t("currency.icon.usd")
+          = @aud_proof.sum
+      = render 'liability_data', account: @aud_account, proof: @aud_proof

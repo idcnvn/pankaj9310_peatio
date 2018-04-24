@@ -25,7 +25,6 @@ module Admin
           flash[:alert] = t('.blank_txid')
           redirect_to :back and return
         end
-
         @bank.charge!(target_params[:txid])
 
         redirect_to :back

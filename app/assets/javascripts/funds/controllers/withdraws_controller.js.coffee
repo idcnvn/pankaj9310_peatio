@@ -70,7 +70,7 @@ app.controller 'WithdrawsController', ['$scope', '$stateParams', '$http', '$gon'
     @withdraw.sum = Number($scope.account.balance)
 
   $scope.openFundSourceManagerPanel = ->
-    if $scope.currency == "cny" || $scope.currency == "inr" || $scope.currency == "usd"
+    if $scope.currency == "cny" || $scope.currency == "inr" || $scope.currency == "usd" || $scope.currency == "aud"
       template = '/templates/fund_sources/bank.html'
       className = 'ngdialog-theme-default custom-width'
     else
