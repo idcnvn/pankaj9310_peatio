@@ -27,6 +27,7 @@ tmp
 /config/markets.yml
 /config/amqp.yml
 /config/banks.yml
+/config/paypal.yml
 
 # Ignore translations.js
 /public/javascripts/translations.js
