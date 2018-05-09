@@ -18,7 +18,7 @@
   coin: true
   family: BTC
   quick_withdraw_max: 0
-  rpc: http://username:password@127.0.0.1:18332
+  rpc: http://rishab12345:arorarishab123@127.0.0.1:18332
   blockchain: https://blockchain.info/tx/#{txid}
   address_url: https://blockchain.info/address/#{address}
   assets:
@@ -30,14 +30,53 @@
   code: eth
   symbol: "฿"
   coin: true
-  main_address: YOUR_BASE_ADDRESS
+  main_address: 0x94158AD9dB2C74b99eEE0D9bca5DecC3c81C66Aa
   family: ETH
   precision: 4
   quick_withdraw_max: 0
-  rpc: http://Your_eth_server_ip
+  rpc: http://localhost
   blockchain: https://etherscan.io/tx/#{txid}
   address_url: https://etherscan.io/address/#{address}
   assets:
     accounts:
       -
         address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+- id: 4
+  key: rupee
+  code: inr
+  symbol: "₹"
+  coin: false
+  precision: 2
+  assets:
+    accounts:
+      -
+        bank: 'Bank of India'
+        address: '9452103100000051'
+        password: '111111'
+        tel: '95555'
+- id: 5
+  key: dollar
+  code: usd
+  symbol: "$"
+  coin: false
+  precision: 2
+  assets:
+    accounts:
+      -
+        bank: 'Bank of India'
+        address: '9452103100000051'
+        password: '111111'
+        tel: '95555'
+- id: 6
+  key: adollar
+  code: aud
+  symbol: "$"
+  coin: false
+  precision: 2
+  assets:
+    accounts:
+      -
+        bank: 'Bank of India'
+        address: '9452103100000051'
+        password: '111111'
+        tel: '95555'

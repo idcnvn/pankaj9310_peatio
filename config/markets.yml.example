@@ -28,3 +28,63 @@
   ask: {fee: 0, currency: eth, fixed: 4}
   sort_order: 1
   #visible: false     # default to true
+- id: btcinr
+  code: 6
+  #name: BTC/INR      # default name
+  base_unit: btc
+  quote_unit: inr
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: inr, fixed: 2}
+  ask: {fee: 0, currency: btc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: ethinr
+  code: 7
+  name: ETH/INR     
+  base_unit: eth
+  quote_unit: inr
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: inr, fixed: 2}
+  ask: {fee: 0, currency: eth, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: ethusd
+  code: 8
+  name: ETH/USD     
+  base_unit: eth
+  quote_unit: usd
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: usd, fixed: 2}
+  ask: {fee: 0, currency: eth, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: btcusd
+  code: 9
+  #name: BTC/INR      # default name
+  base_unit: btc
+  quote_unit: usd
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: usd, fixed: 2}
+  ask: {fee: 0, currency: btc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: ethaud
+  code: 10
+  name: ETH/AUD     
+  base_unit: eth
+  quote_unit: aud
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: aud, fixed: 2}
+  ask: {fee: 0, currency: eth, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: btcaud
+  code: 11
+  #name: BTC/INR      # default name
+  base_unit: btc
+  quote_unit: aud
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: aud, fixed: 2}
+  ask: {fee: 0, currency: btc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true

@@ -78,4 +78,33 @@
   currency: cny
   deposit: true
   withdraw: true
-
+- id: 17
+  code: sbi
+  currency: inr
+  deposit: true
+  withdraw: true
+- id: 18
+  code: boi
+  currency: inr
+  deposit: true
+  withdraw: true
+- id: 19
+  code: cbi
+  currency: inr
+  deposit: true
+  withdraw: true
+- id: 20
+  code: hdfc
+  currency: inr
+  deposit: true
+  withdraw: true
+- id: 21
+  code: icic
+  currency: inr
+  deposit: true
+  withdraw: true
+- id: 22
+  code: paypal
+  currency: inr
+  deposit: true
+  withdraw: true
