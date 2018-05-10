@@ -19,7 +19,7 @@ app.controller 'DepositsController', ['$scope', '$stateParams', '$http', '$filte
       .success (responseText) ->
         depositCtrl.deposit = {}
         $('.form-submit > input').removeAttr('disabled')
-        window.location.href = responseText
+        #window.location.href = responseText
       .error (responseText) ->
         $.publish 'flash', {message: responseText }
 
