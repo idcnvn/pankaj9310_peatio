@@ -298,6 +298,7 @@ en:
   market:
     currency:
       btc: BTC
+      xrp: XRP
       eth: ETH
       cny: CNY
       doge: DOGE
@@ -311,6 +312,11 @@ en:
       key: BTC
       code: BTC
       name: Bitcoin
+      format: '0,0.0000'
+    ripple:
+      key: XRP
+      code: XRP
+      name: Ripple
       format: '0,0.0000'
     ether:
       key: ETH
@@ -504,6 +510,13 @@ en:
       latency: 1 confirmation
       transfer: Manual
       go: Deposit
+    ripple:
+      key: ripple
+      title: Ripple Deposits
+      intro: Deposit Ripple from your own wallet address to Tradealtcoin account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
   deposits/bank:
     aasm_state:
       submitting: Submitting
@@ -520,7 +533,10 @@ en:
           require_transaction: it can't generate new address if it hasn't been used.
       ethers:
         gen_address:
-          require_transaction: it can't generate new address if it hasn't been used.    
+          require_transaction: it can't generate new address if it hasn't been used.
+      ripples:
+        gen_address:
+          require_transaction: it can't generate new address if it hasn't been used.        
       banks:
         destroy:
           notice: Revocation request is successful.
@@ -709,6 +725,7 @@ en:
       index:
         liability-proof: Proof of Liabilities
         btc-assets: BTC Assets
+        xrp-assets: XRP Assets
         cny-assets: CNY Assets
         eth-assets: ETH Assets
         inr-assets: INR Assets
@@ -716,12 +733,14 @@ en:
         aud-assets: AUD Assets
       liability_tabs:
         verify-btc: Verify My BTC Assets
+        verify-xrp: Verify My XRP Assets
         verify-cny: Verify My CNY Assets
         verify-eth: Verify My ETH Assets
         verify-inr: Verify My INR Assets
         verify-usd: Verify My USD Assets
         verify-aud: Verify My AUD Assets
         btc-assets-total: 'Total BTC assets of exchange: '
+        xrp-assets-total: 'Total XRP assets of exchange: '
         cny-assets-total: 'Total CNY assets of exchange: '
         eth-assets-total: 'Total ETH assets of exchange: '
         inr-assets-total: 'Total INR assets of exchange: '
@@ -747,6 +766,11 @@ en:
         title: BTC Assets
         intro: All of exchange's BTC assets are listed here.
         total: Total BTC Assets
+        address: Address
+      xrp_assets:
+        title: XRP Assets
+        intro: All of exchange's XRP assets are listed here.
+        total: Total XRP Assets
         address: Address
       eth_assets:
         title: ETH Assets
@@ -791,6 +815,7 @@ en:
         usd_format: '0.00'
         aud_format: '0.00'
         btc_format: '0.00000000'
+        xrp_format: '0.00000000'
         eth_format: '0.00000000'
         reason:
           cny:
@@ -818,6 +843,12 @@ en:
             withdraw: Withdraw
             fix: Fix
           btc:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          xrp:
             strike_add: Plus
             strike_sub: Sub
             deposit: Deposit
@@ -876,6 +907,7 @@ en:
         aud_html: "<i class='fa fa-check'></i><span>AUD Markets</span>"
         eth_html: "<i class='fa fa-check'></i><span>ETH Markets</span>"
         btc_html: "<i class='fa fa-check'></i><span>BTC Markets</span>"
+        xrp_html: "<i class='fa fa-check'></i><span>XRP Markets</span>"
         price: Price
         change: "24h %"
       range_switch:
@@ -1068,6 +1100,7 @@ en:
         cny_format: '0.00'
         btc_format: '0.00000000'
         eth_format: '0.00000000'
+        xrp_format: '0.00000000'
         total: Total
   guides:
     private:
@@ -1203,6 +1236,8 @@ en:
           fund_extra: If your bank is no longer in the list, please contact customer
             service
         satoshi:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        ripple:
           sum: "<a target='_balance' href='#'>Fee structure</a>"
     creating: Creating...
     updating: Updating...
@@ -1433,6 +1468,14 @@ en:
       member_name: Member
       state_and_actions: State/Actions
       currency_obj_key_text: Currency
+    ripple:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      member_name: Member
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
     bank:
       sn: SN
       amount: Amount
@@ -1464,6 +1507,7 @@ en:
     currency:
       cny: CNY
       btc: BTC
+      xrp: XRP
       eth: ETH
       inr: INR
       usd: USD
@@ -1495,6 +1539,7 @@ en:
     fund_source:
       category:
         satoshi: Bitcoin
+        ripple: Ripple
         bank: Bank
     id_document:
       id_document_type:
@@ -1816,9 +1861,9 @@ en:
     application:
       close: Close
     meta:
-      page_title: Dalla - The Opensource Cryptocurrency Exchange
-      page_description: Dalla - The Opensource Cryptocurrency Exchange
-      page_keywords: Dalla,Opensource,Exchange,Cryptocurrency
+      page_title: Dalla - peer to peer crypto currency Exchange
+      page_description: Dalla - peer to peer crypto currency Exchange
+      page_keywords: Dalla,XRP,Exchange,Cryptocurrency
   members:
     edit:
       name: Please fill out the application.
@@ -1967,6 +2012,13 @@ en:
       key: Ether
       title: Ether Blockchain
       intro: Withdraw Litecoin to your own Ether wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
+    ripple:
+      key: Ripple
+      title: Ripple Blockchain
+      intro: Withdraw Litecoin to your own Ripple wallet
       latency: 30 minutes
       transfer: Manual
       go: Withdraw

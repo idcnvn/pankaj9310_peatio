@@ -8,6 +8,7 @@ module Private
       @usd_assets  = Currency.assets('usd')
       @aud_assets  = Currency.assets('aud')
       @btc_proof   = Proof.current :btc
+      @xrp_proof   = Proof.current :xrp
       @cny_proof   = Proof.current :cny
       @inr_proof   = Proof.current :inr
       @usd_proof   = Proof.current :usd
@@ -15,6 +16,7 @@ module Private
 
       if current_user
         @btc_account = current_user.accounts.with_currency(:btc).first
+        @xrp_account = current_user.accounts.with_currency(:xrp).first
         @cny_account = current_user.accounts.with_currency(:cny).first
         @inr_account = current_user.accounts.with_currency(:inr).first
         @aud_account = current_user.accounts.with_currency(:aud).first
