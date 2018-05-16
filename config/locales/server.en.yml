@@ -21,6 +21,7 @@ en:
       deposits/bank: Deposit Bank
       withdraws/bank: Withdraw Bank
       withdraws/satoshi: Withdraw
+      withdraws/litecoin: Withdraw
     attributes:
       api_token:
         access_key: Access Key
@@ -188,6 +189,26 @@ en:
         amount: Amount
         remark: Remark
         fee: Fee
+      deposits/litecoin:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      withdraws/litecoin:
+        id: ID
+        member_name: Account
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
     errors:
       models:
         order_bid:
@@ -235,6 +256,8 @@ en:
             address:
               satoshi_ismine: Used Address
               satoshi_invalid: Invalid Address
+              litecoin_ismine: Used Address
+              litecoin_invalid: Invalid Address
         withdraw:
           account_balance_is_poor: Account balance is insufficient
           attributes:
@@ -244,6 +267,12 @@ en:
               poor: insufficient
               bank_min: Less 5000.00
         withdraws/satoshi:
+          attributes:
+            fund_uid:
+              blank: Please enter your withdrawal address
+              invalid: Invalid withdrawals address, please review.
+              ismine: Please use a new address.
+        withdraws/litecoin:
           attributes:
             fund_uid:
               blank: Please enter your withdrawal address
@@ -307,6 +336,7 @@ en:
       inr: INR
       usd: USD
       aud: AUD
+      ltc: LTC
   currency:
     satoshi:
       key: BTC
@@ -322,6 +352,11 @@ en:
       key: ETH
       code: ETH
       name: Ethereum
+      format: '0,0.0000'
+    litecoin:
+      key: LTC
+      code: LTC
+      name: Litecoin
       format: '0,0.0000'
     bitsharesx:
       key: BTS
@@ -510,6 +545,13 @@ en:
       latency: 1 confirmation
       transfer: Manual
       go: Deposit
+    litecoin:
+      key: litecoin
+      title: Litecoin Deposits
+      intro: Deposit Litecoin from your own wallet address to Tradealtcoin account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
     ripple:
       key: ripple
       title: Ripple Deposits
@@ -532,6 +574,9 @@ en:
         gen_address:
           require_transaction: it can't generate new address if it hasn't been used.
       ethers:
+        gen_address:
+          require_transaction: it can't generate new address if it hasn't been used.
+      litecoins:
         gen_address:
           require_transaction: it can't generate new address if it hasn't been used.
       ripples:
@@ -655,6 +700,21 @@ en:
         create:
           notice: Withdrawal request successfully submitted. Use the info below to
             complete the bank transfer.
+      litecoins:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon
+            as possible
+          alert_two_factor: Two-Factor Authentication error
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to
+            complete the bank transfer.
     tickets:
       index:
         new_ticket: New Ticket
@@ -728,6 +788,7 @@ en:
         xrp-assets: XRP Assets
         cny-assets: CNY Assets
         eth-assets: ETH Assets
+        ltc-assets: LTC Assets
         inr-assets: INR Assets
         usd-assets: USD Assets
         aud-assets: AUD Assets
@@ -736,6 +797,7 @@ en:
         verify-xrp: Verify My XRP Assets
         verify-cny: Verify My CNY Assets
         verify-eth: Verify My ETH Assets
+        verify-ltc: Verify My LTC Assets
         verify-inr: Verify My INR Assets
         verify-usd: Verify My USD Assets
         verify-aud: Verify My AUD Assets
@@ -743,6 +805,7 @@ en:
         xrp-assets-total: 'Total XRP assets of exchange: '
         cny-assets-total: 'Total CNY assets of exchange: '
         eth-assets-total: 'Total ETH assets of exchange: '
+        ltc-assets-total: 'Total LTC assets of exchange: '
         inr-assets-total: 'Total INR assets of exchange: '
         usd-assets-total: 'Total USD assets of exchange: '
         aud-assets-total: 'Total AUD assets of exchange: '
@@ -776,6 +839,11 @@ en:
         title: ETH Assets
         intro: All of exchange's ETH assets are listed here.
         total: Total ETH Assets
+        address: Address
+      ltc_assets:
+        title: LTC Assets
+        intro: All of exchange's LTC assets are listed here.
+        total: Total LTC Assets
         address: Address
       cny_assets:
         title: CNY Assets
@@ -817,6 +885,7 @@ en:
         btc_format: '0.00000000'
         xrp_format: '0.00000000'
         eth_format: '0.00000000'
+        ltc_format: '0.00000000'
         reason:
           cny:
             strike_add: Plus
@@ -849,6 +918,12 @@ en:
             withdraw: Withdraw
             fix: Fix
           xrp:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          ltc:
             strike_add: Plus
             strike_sub: Sub
             deposit: Deposit
@@ -908,6 +983,7 @@ en:
         eth_html: "<i class='fa fa-check'></i><span>ETH Markets</span>"
         btc_html: "<i class='fa fa-check'></i><span>BTC Markets</span>"
         xrp_html: "<i class='fa fa-check'></i><span>XRP Markets</span>"
+        ltc_html: "<i class='fa fa-check'></i><span>LTC Markets</span>"
         price: Price
         change: "24h %"
       range_switch:
@@ -1207,6 +1283,9 @@ en:
         satoshi:
           sum: Minimum amount 0.001
           fund_extra: Enter a label for this address (optional)
+        litecoin:
+          sum: Minimum amount 0.001
+          fund_extra: Enter a label for this address (optional)
     hints:
       deposit:
         bank:
@@ -1238,6 +1317,8 @@ en:
         satoshi:
           sum: "<a target='_balance' href='#'>Fee structure</a>"
         ripple:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        litecoin:
           sum: "<a target='_balance' href='#'>Fee structure</a>"
     creating: Creating...
     updating: Updating...
@@ -1288,6 +1369,13 @@ en:
           fund_extra: Label
           account_balance: Account Balance
           member_name: Account
+        litecoin:
+          fee: Fee
+          sum: Amount
+          fund_uid: Litecoin Address
+          fund_extra: Label
+          account_balance: Account Balance
+          member_name: Account
   admin:
     deposits:
       banks:
@@ -1304,6 +1392,12 @@ en:
         update:
           blank_txid: TxID can't be blank
       satoshis:
+        update:
+          notice: The deposit was successful.
+        index:
+          accept: Accept
+          accept_confirm: Confirm deposit?
+      litecoins:
         update:
           notice: The deposit was successful.
         index:
@@ -1397,7 +1491,25 @@ en:
           succeed_confirm: Process withdrawal?
           reject_confirm: Reject withdrawal?
           withdraw: Withdrawals
+      litecoins:
+        index:
+          one: Pending withdrawals
+          all: Last 24 hours
+          empty: No data
+        show:
+          process: Accepted
+          succeed: Withdraw
+          reject: Reject
+          succeed_confirm: Process withdrawal?
+          reject_confirm: Reject withdrawal?
+          withdraw: Withdrawals
   deposits/satoshi:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/litecoin:
     aasm_state:
       submitted: Submitted
       accepted: Accepted
@@ -1476,6 +1588,14 @@ en:
       member_name: Member
       state_and_actions: State/Actions
       currency_obj_key_text: Currency
+    litecoin:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      member_name: Member
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
     bank:
       sn: SN
       amount: Amount
@@ -1512,6 +1632,7 @@ en:
       inr: INR
       usd: USD
       aud: AUD
+      ltc: LTC
     order:
       state:
         done: DONE
@@ -1540,11 +1661,13 @@ en:
       category:
         satoshi: Bitcoin
         ripple: Ripple
+        litecoin: Litecoin
         bank: Bank
     id_document:
       id_document_type:
         id_card: ID Card
         passport: Passport
+        aadhar_card: Aadhar Card
         driver_license: Driver's License
       id_bill_type:
         bank_statement: Bank Statement
@@ -2022,6 +2145,13 @@ en:
       latency: 30 minutes
       transfer: Manual
       go: Withdraw
+    litecoin:
+      key: Litecoin
+      title: Litecoin Blockchain
+      intro: Withdraw Litecoin to your own Litecoin wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
   withdraws:
     invalid_address: is not valid. You can not withdraw to this address.
   withdraws/bank:
@@ -2037,6 +2167,18 @@ en:
       canceled: Canceld
       failed: Failed
   withdraws/satoshi:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      almost_done: Almost Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/litecoin:
     aasm_state:
       submitting: Submitting
       submitted: Submitted
