@@ -88,3 +88,112 @@
   ask: {fee: 0, currency: btc, fixed: 4}
   sort_order: 1
   #visible: false     # default to true
+- id: xrpbtc
+  code: 12
+  name: XRP/BTC     
+  base_unit: xrp
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: xrp, fixed: 4}
+  ask: {fee: 0, currency: btc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: xrpeth
+  code: 13
+  name: XRP/ETH      
+  base_unit: xrp
+  quote_unit: eth
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: xrp, fixed: 4}
+  ask: {fee: 0, currency: eth, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: xrpinr
+  code: 14
+  #name: BTC/INR      # default name
+  base_unit: xrp
+  quote_unit: inr
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: inr, fixed: 2}
+  ask: {fee: 0, currency: xrp, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: xrpusd
+  code: 15
+  #name: BTC/INR      # default name
+  base_unit: xrp
+  quote_unit: usd
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: usd, fixed: 2}
+  ask: {fee: 0, currency: xrp, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: xrpaud
+  code: 16
+  base_unit: xrp
+  quote_unit: aud
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: aud, fixed: 2}
+  ask: {fee: 0, currency: xrp, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: ltcbtc
+  code: 17
+  name: LTC/BTC     
+  base_unit: ltc
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: ltc, fixed: 4}
+  ask: {fee: 0, currency: btc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: ltceth
+  code: 18
+  name: LTC/ETH      
+  base_unit: ltc
+  quote_unit: eth
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: ltc, fixed: 4}
+  ask: {fee: 0, currency: eth, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: ltcinr
+  code: 19
+  #name: BTC/INR      # default name
+  base_unit: ltc
+  quote_unit: inr
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: inr, fixed: 2}
+  ask: {fee: 0, currency: ltc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: ltcusd
+  code: 20
+  #name: BTC/INR      # default name
+  base_unit: ltc
+  quote_unit: usd
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: usd, fixed: 2}
+  ask: {fee: 0, currency: ltc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: ltcaud
+  code: 21
+  base_unit: ltc
+  quote_unit: aud
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: aud, fixed: 2}
+  ask: {fee: 0, currency: ltc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+- id: ltcxrp
+  code: 22
+  name: LTC/XRP      
+  base_unit: ltc
+  quote_unit: xrp
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: ltc, fixed: 4}
+  ask: {fee: 0, currency: xrp, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true
+

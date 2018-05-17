@@ -80,3 +80,29 @@
         address: '9452103100000051'
         password: '111111'
         tel: '95555'
+- id: 7
+  key: ripple
+  code: xrp
+  symbol: "฿"
+  coin: true
+  quick_withdraw_max: 110
+  # rpc: https://s.altnet.rippletest.net:51234
+  rpc: http://rishab12345:arorarishab123@127.0.0.1:54321
+  blockchain: https://bithomp.com/explorer/#{txid}
+  address_url: https://bithomp.com/explorer/#{address}
+  assets:
+    accounts:
+      - address: rs8vYmk5qM5iqnmHwkeaeGW7KzQrQEpyAS
+        secret: shVX5j8k7vBJw6NWFvyhDpPjGxgJJ
+
+- id: 8
+  key: litecoin
+  code: ltc
+  coin: true
+  rpc: http://litecoinrpc:password@127.0.0.1:9332
+  blockchain: http://ltc.blockr.io/tx/info/#{txid}
+  address_url: http://ltc.blockr.io/address/info/#{address}
+  assets:
+    accounts:
+    -
+      address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44

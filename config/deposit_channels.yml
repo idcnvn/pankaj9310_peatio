@@ -19,6 +19,11 @@
   currency: eth
   min_confirm: 1
   max_confirm: 6
+- id: 700
+  key: litecoin
+  currency: ltc
+  min_confirm: 1
+  max_confirm: 6
 - id: 800
   key: bank
   currency: inr
@@ -56,8 +61,3 @@
   min_confirm: 1
   max_confirm: 3
 
-- id: 700
-  key: litecoin
-  currency: ltc
-  min_confirm: 1
-  max_confirm: 6
