@@ -209,6 +209,26 @@ en:
         amount: Amount
         remark: Remark
         fee: Fee
+      deposits/ripple:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      withdraws/ripple:
+        id: ID
+        member_name: Account
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
     errors:
       models:
         order_bid:
@@ -258,6 +278,8 @@ en:
               satoshi_invalid: Invalid Address
               litecoin_ismine: Used Address
               litecoin_invalid: Invalid Address
+              ripple_ismine: Used Address
+              ripple_invalid: Invalid Address
         withdraw:
           account_balance_is_poor: Account balance is insufficient
           attributes:
@@ -273,6 +295,12 @@ en:
               invalid: Invalid withdrawals address, please review.
               ismine: Please use a new address.
         withdraws/litecoin:
+          attributes:
+            fund_uid:
+              blank: Please enter your withdrawal address
+              invalid: Invalid withdrawals address, please review.
+              ismine: Please use a new address.
+        withdraws/ripple:
           attributes:
             fund_uid:
               blank: Please enter your withdrawal address
@@ -701,6 +729,21 @@ en:
           notice: Withdrawal request successfully submitted. Use the info below to
             complete the bank transfer.
       litecoins:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon
+            as possible
+          alert_two_factor: Two-Factor Authentication error
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to
+            complete the bank transfer.
+      ripples:
         destroy:
           notice: Withdraw been canceled, frozen balance has returned to your account
         update:
@@ -1286,6 +1329,9 @@ en:
         litecoin:
           sum: Minimum amount 0.001
           fund_extra: Enter a label for this address (optional)
+        ripple:
+          sum: Minimum amount 0.001
+          fund_extra: Enter a label for this address (optional)
     hints:
       deposit:
         bank:
@@ -1376,6 +1422,13 @@ en:
           fund_extra: Label
           account_balance: Account Balance
           member_name: Account
+        ripple:
+          fee: Fee
+          sum: Amount
+          fund_uid: Litecoin Address
+          fund_extra: Label
+          account_balance: Account Balance
+          member_name: Account
   admin:
     deposits:
       banks:
@@ -1398,6 +1451,12 @@ en:
           accept: Accept
           accept_confirm: Confirm deposit?
       litecoins:
+        update:
+          notice: The deposit was successful.
+        index:
+          accept: Accept
+          accept_confirm: Confirm deposit?
+      ripples:
         update:
           notice: The deposit was successful.
         index:
@@ -1503,6 +1562,18 @@ en:
           succeed_confirm: Process withdrawal?
           reject_confirm: Reject withdrawal?
           withdraw: Withdrawals
+      ripples:
+        index:
+          one: Pending withdrawals
+          all: Last 24 hours
+          empty: No data
+        show:
+          process: Accepted
+          succeed: Withdraw
+          reject: Reject
+          succeed_confirm: Process withdrawal?
+          reject_confirm: Reject withdrawal?
+          withdraw: Withdrawals
   deposits/satoshi:
     aasm_state:
       submitted: Submitted
@@ -1510,6 +1581,12 @@ en:
       checked: Checked
       warning: Warning
   deposits/litecoin:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/ripple:
     aasm_state:
       submitted: Submitted
       accepted: Accepted
@@ -2134,14 +2211,14 @@ en:
     ether:
       key: Ether
       title: Ether Blockchain
-      intro: Withdraw Litecoin to your own Ether wallet
+      intro: Withdraw Ethereum to your own Ether wallet
       latency: 30 minutes
       transfer: Manual
       go: Withdraw
     ripple:
       key: Ripple
       title: Ripple Blockchain
-      intro: Withdraw Litecoin to your own Ripple wallet
+      intro: Withdraw Ripple to your own Ripple wallet
       latency: 30 minutes
       transfer: Manual
       go: Withdraw
@@ -2179,6 +2256,18 @@ en:
       canceled: Cancelled
       failed: Failed
   withdraws/litecoin:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      almost_done: Almost Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/ripple:
     aasm_state:
       submitting: Submitting
       submitted: Submitted

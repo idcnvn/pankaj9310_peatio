@@ -69,6 +69,7 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'simple_captcha2', require: 'simple_captcha'
 gem 'rest-client', '~> 1.6.8'
 gem 'paypal-sdk-rest'
+gem 'god', '~> 0.13.7', require: false
 
 group :development, :test do
   gem 'factory_girl_rails'

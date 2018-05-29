@@ -161,6 +161,7 @@ GEM
     globalize (4.0.0)
       activemodel (>= 4.0.0, < 5)
       activerecord (>= 4.0.0, < 5)
+    god (0.13.7)
     gon (5.2.0)
       actionpack (>= 2.3.0)
       json
@@ -448,6 +449,7 @@ DEPENDENCIES
   figaro
   font-awesome-sass
   globalize (~> 4.0.0)
+  god (~> 0.13.7)
   gon (~> 5.2.0)
   grape (~> 0.7.0)
   grape-entity (~> 0.4.2)
