@@ -54,6 +54,7 @@ en:
         aud: AUD
         xrp: XRP
         ltc: LTC
+        xlm: XLM
       deposit_currency:
         desc: "To deposit via Bank transfer, please follow these steps:"
         desc_item_1: "1. Submit the form to get the identification code."
@@ -89,7 +90,8 @@ en:
         title: ETH Deposit
       deposit_ltc:
         title: LTC Deposit
-
+      deposit_xlm:
+        title: XLM Deposit
 
       deposit_coin:
         address: Address
@@ -149,6 +151,8 @@ en:
         title: ETH Withdraw
       withdraw_ltc:
         title: LTC Withdraw
+      withdraw_xlm:
+        title: XLM Withdraw
       withdraw_coin:
         intro: Please fill in the address and amount, then submit the form. It will be confirmed in 10 minutes
         label: Label
@@ -208,3 +212,5 @@ en:
         usd: USD Market
         aud: AUD Market
         ltc: LTC Market
+        xlm: XLM Market
+        

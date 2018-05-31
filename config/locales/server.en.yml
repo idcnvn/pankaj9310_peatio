@@ -22,6 +22,9 @@ en:
       withdraws/bank: Withdraw Bank
       withdraws/satoshi: Withdraw
       withdraws/litecoin: Withdraw
+      withdraws/ripple: Withdraw
+      withdraws/stellar: Withdraw
+      withdraws/ether: Withdraw
     attributes:
       api_token:
         access_key: Access Key
@@ -229,6 +232,26 @@ en:
         amount: Amount
         remark: Remark
         fee: Fee
+      deposits/stellar:
+        created_at: Created At
+        txid: Transaction ID
+        amount: Amount
+        confirmations: Confirmation
+        aasm_state_text: State
+      withdraws/stellar:
+        id: ID
+        member_name: Account
+        currency_obj_key_text: Currency
+        state_and_actions: State/Action
+        fund_extra_text: Withdraw Label
+        fund_extrat: Withdraw Label
+        fund_source: Bank
+        fund_uid: Account
+        created_at: Created At
+        sum: Amount
+        amount: Amount
+        remark: Remark
+        fee: Fee
     errors:
       models:
         order_bid:
@@ -280,6 +303,8 @@ en:
               litecoin_invalid: Invalid Address
               ripple_ismine: Used Address
               ripple_invalid: Invalid Address
+              stellar_ismine: Used Address
+              stellar_invalid: Invalid Address
         withdraw:
           account_balance_is_poor: Account balance is insufficient
           attributes:
@@ -301,6 +326,12 @@ en:
               invalid: Invalid withdrawals address, please review.
               ismine: Please use a new address.
         withdraws/ripple:
+          attributes:
+            fund_uid:
+              blank: Please enter your withdrawal address
+              invalid: Invalid withdrawals address, please review.
+              ismine: Please use a new address.
+        withdraws/stellar:
           attributes:
             fund_uid:
               blank: Please enter your withdrawal address
@@ -365,6 +396,7 @@ en:
       usd: USD
       aud: AUD
       ltc: LTC
+      xlm: XLM
   currency:
     satoshi:
       key: BTC
@@ -375,6 +407,11 @@ en:
       key: XRP
       code: XRP
       name: Ripple
+      format: '0,0.0000'
+    stellar:
+      key: XLM
+      code: XLM
+      name: Stellar
       format: '0,0.0000'
     ether:
       key: ETH
@@ -587,6 +624,13 @@ en:
       latency: 1 confirmation
       transfer: Manual
       go: Deposit
+    stellar:
+      key: stellar
+      title: Stellar Deposits
+      intro: Deposit Stellar from your own wallet address to Tradealtcoin account
+      latency: 1 confirmation
+      transfer: Manual
+      go: Deposit
   deposits/bank:
     aasm_state:
       submitting: Submitting
@@ -609,7 +653,10 @@ en:
           require_transaction: it can't generate new address if it hasn't been used.
       ripples:
         gen_address:
-          require_transaction: it can't generate new address if it hasn't been used.        
+          require_transaction: it can't generate new address if it hasn't been used.
+      stellars:
+        gen_address:
+          require_transaction: it can't generate new address if it hasn't been used.            
       banks:
         destroy:
           notice: Revocation request is successful.
@@ -758,6 +805,21 @@ en:
         create:
           notice: Withdrawal request successfully submitted. Use the info below to
             complete the bank transfer.
+      stellars:
+        destroy:
+          notice: Withdraw been canceled, frozen balance has returned to your account
+        update:
+          notice: Withdraw request is submit successful, we will process it as soon
+            as possible
+          alert_two_factor: Two-Factor Authentication error
+        new:
+          submit: Submit
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Manage Fund Source
+        create:
+          notice: Withdrawal request successfully submitted. Use the info below to
+            complete the bank transfer.
     tickets:
       index:
         new_ticket: New Ticket
@@ -832,12 +894,14 @@ en:
         cny-assets: CNY Assets
         eth-assets: ETH Assets
         ltc-assets: LTC Assets
+        xlm-assets: XLM Assets
         inr-assets: INR Assets
         usd-assets: USD Assets
         aud-assets: AUD Assets
       liability_tabs:
         verify-btc: Verify My BTC Assets
         verify-xrp: Verify My XRP Assets
+        verify-xlm: Verify My XLM Assets
         verify-cny: Verify My CNY Assets
         verify-eth: Verify My ETH Assets
         verify-ltc: Verify My LTC Assets
@@ -846,6 +910,7 @@ en:
         verify-aud: Verify My AUD Assets
         btc-assets-total: 'Total BTC assets of exchange: '
         xrp-assets-total: 'Total XRP assets of exchange: '
+        xlm-assets-total: 'Total XLM assets of exchange: '
         cny-assets-total: 'Total CNY assets of exchange: '
         eth-assets-total: 'Total ETH assets of exchange: '
         ltc-assets-total: 'Total LTC assets of exchange: '
@@ -877,6 +942,11 @@ en:
         title: XRP Assets
         intro: All of exchange's XRP assets are listed here.
         total: Total XRP Assets
+        address: Address
+      xlm_assets:
+        title: XLM Assets
+        intro: All of exchange's XLM assets are listed here.
+        total: Total XLM Assets
         address: Address
       eth_assets:
         title: ETH Assets
@@ -927,6 +997,7 @@ en:
         aud_format: '0.00'
         btc_format: '0.00000000'
         xrp_format: '0.00000000'
+        xlm_format: '0.00000000'
         eth_format: '0.00000000'
         ltc_format: '0.00000000'
         reason:
@@ -967,6 +1038,12 @@ en:
             withdraw: Withdraw
             fix: Fix
           ltc:
+            strike_add: Plus
+            strike_sub: Sub
+            deposit: Deposit
+            withdraw: Withdraw
+            fix: Fix
+          xlm:
             strike_add: Plus
             strike_sub: Sub
             deposit: Deposit
@@ -1027,6 +1104,7 @@ en:
         btc_html: "<i class='fa fa-check'></i><span>BTC Markets</span>"
         xrp_html: "<i class='fa fa-check'></i><span>XRP Markets</span>"
         ltc_html: "<i class='fa fa-check'></i><span>LTC Markets</span>"
+        xlm_html: "<i class='fa fa-check'></i><span>XLM Markets</span>"
         price: Price
         change: "24h %"
       range_switch:
@@ -1220,6 +1298,8 @@ en:
         btc_format: '0.00000000'
         eth_format: '0.00000000'
         xrp_format: '0.00000000'
+        ltc_format: '0.00000000'
+        xlm_format: '0.00000000'
         total: Total
   guides:
     private:
@@ -1332,6 +1412,9 @@ en:
         ripple:
           sum: Minimum amount 0.001
           fund_extra: Enter a label for this address (optional)
+        stellar:
+          sum: Minimum amount 0.001
+          fund_extra: Enter a label for this address (optional)
     hints:
       deposit:
         bank:
@@ -1363,6 +1446,8 @@ en:
         satoshi:
           sum: "<a target='_balance' href='#'>Fee structure</a>"
         ripple:
+          sum: "<a target='_balance' href='#'>Fee structure</a>"
+        stellar:
           sum: "<a target='_balance' href='#'>Fee structure</a>"
         litecoin:
           sum: "<a target='_balance' href='#'>Fee structure</a>"
@@ -1425,7 +1510,14 @@ en:
         ripple:
           fee: Fee
           sum: Amount
-          fund_uid: Litecoin Address
+          fund_uid: Ripple Address
+          fund_extra: Label
+          account_balance: Account Balance
+          member_name: Account
+        stellar:
+          fee: Fee
+          sum: Amount
+          fund_uid: Stellar Address
           fund_extra: Label
           account_balance: Account Balance
           member_name: Account
@@ -1457,6 +1549,12 @@ en:
           accept: Accept
           accept_confirm: Confirm deposit?
       ripples:
+        update:
+          notice: The deposit was successful.
+        index:
+          accept: Accept
+          accept_confirm: Confirm deposit?
+      stellars:
         update:
           notice: The deposit was successful.
         index:
@@ -1574,6 +1672,18 @@ en:
           succeed_confirm: Process withdrawal?
           reject_confirm: Reject withdrawal?
           withdraw: Withdrawals
+      stellars:
+        index:
+          one: Pending withdrawals
+          all: Last 24 hours
+          empty: No data
+        show:
+          process: Accepted
+          succeed: Withdraw
+          reject: Reject
+          succeed_confirm: Process withdrawal?
+          reject_confirm: Reject withdrawal?
+          withdraw: Withdrawals
   deposits/satoshi:
     aasm_state:
       submitted: Submitted
@@ -1587,6 +1697,12 @@ en:
       checked: Checked
       warning: Warning
   deposits/ripple:
+    aasm_state:
+      submitted: Submitted
+      accepted: Accepted
+      checked: Checked
+      warning: Warning
+  deposits/stellar:
     aasm_state:
       submitted: Submitted
       accepted: Accepted
@@ -1673,6 +1789,14 @@ en:
       member_name: Member
       state_and_actions: State/Actions
       currency_obj_key_text: Currency
+    stellar:
+      amount: Amount
+      txid: TxId
+      created_at: Created At
+      confirmations: Confirmations
+      member_name: Member
+      state_and_actions: State/Actions
+      currency_obj_key_text: Currency
     bank:
       sn: SN
       amount: Amount
@@ -1710,6 +1834,7 @@ en:
       usd: USD
       aud: AUD
       ltc: LTC
+      xlm: XLM
     order:
       state:
         done: DONE
@@ -1739,6 +1864,7 @@ en:
         satoshi: Bitcoin
         ripple: Ripple
         litecoin: Litecoin
+        stellar: Stellar
         bank: Bank
     id_document:
       id_document_type:
@@ -2063,7 +2189,7 @@ en:
     meta:
       page_title: Dalla - peer to peer crypto currency Exchange
       page_description: Dalla - peer to peer crypto currency Exchange
-      page_keywords: Dalla,XRP,Exchange,Cryptocurrency
+      page_keywords: Dalla,XRP,LTC, BTC, XLM, Exchange,Cryptocurrency
   members:
     edit:
       name: Please fill out the application.
@@ -2222,6 +2348,13 @@ en:
       latency: 30 minutes
       transfer: Manual
       go: Withdraw
+    stellar:
+      key: Stellar
+      title: Stellar Blockchain
+      intro: Withdraw Stellar to your own Stellar wallet
+      latency: 30 minutes
+      transfer: Manual
+      go: Withdraw
     litecoin:
       key: Litecoin
       title: Litecoin Blockchain
@@ -2268,6 +2401,18 @@ en:
       canceled: Cancelled
       failed: Failed
   withdraws/ripple:
+    aasm_state:
+      submitting: Submitting
+      submitted: Submitted
+      rejected: Rejected
+      accepted: Accepted
+      suspect: Suspect
+      processing: processing
+      done: Done
+      almost_done: Almost Done
+      canceled: Cancelled
+      failed: Failed
+  withdraws/stellar:
     aasm_state:
       submitting: Submitting
       submitted: Submitted
