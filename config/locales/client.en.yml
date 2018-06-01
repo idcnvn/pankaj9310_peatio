@@ -5,30 +5,35 @@ en:
     cancel: Cancel
     confirm: Confirm
     banks:
-      icbc: Industryand Commercial Bank of China
-      cbc: Construction Bank of China
-      bc: Bank of China
-      bcm: Bank of Communications
-      abc: Agriculture Bank of China
-      cmb: China Merchants Bank Ltd
-      cmbc: China Minsheng Banking Co., Ltd
-      cncb: China CITIC Bank
-      hxb: Hua Xia Bank Co., Ltd.
-      cib: Industrial Bank Co., Ltd
-      spdb: Shanghai Pudong Development Bank
-      bob: Bank of Beijing
-      ceb: China Everbright Bank CO.LTD
-      sdb: Shenzhen Development Bank
-      pab: Ping An Bank Co., Ltd.
-      gdb: Guangdong Development Bank
-      psbc: Postal Savings Bank of China
-      bos: Bank of Shanghai
       sbi: State Bank of India
       boi: Bank of India
       cbi: Central Bank of India
       hdfc: Housing Development Finance Corporation
       icic: Industrial Credit and Investment Corporation of India Limited
       paypal: Paypal
+      albk: ALLAHABAD BANK
+      anbk: ANDHRA BANK
+      bob: BANK OF BARODA
+      boi: BANK OF INDIA
+      bom: BANK OF MAHARASHTRA
+      cbk: CANARA BANK
+      cbi: CENTRAL BANK OF INDIA
+      coba: CORPORATION BANK
+      deb: DENA BANK
+      idbi: IDBI BANK LTD.
+      ibh: IND BANK HOUSING LTD.
+      imbs: INDBANK MERCHANT BANKING SERVICES LTD.
+      inbk: INDIAN BANK
+      iob: INDIAN OVERSEAS BANK
+      obc: ORIENTAL BANK OF COMMERCE
+      psb: PUNJAB & SIND BANK
+      pnb: PUNJAB NATIONAL BANK
+      sbi: STATE BANK OF INDIA
+      sbk: SYNDICATE BANK
+      uco: UCO BANK
+      unoi: UNION BANK OF INDIA
+      ubi: UNITED BANK OF INDIA
+      vb: VIJAYA BANK
     fund_sources:
       manage_bank_account: Bank Account Management
       manage_bank_account_desc: To facilitate the choice of bank withdrawals address
@@ -54,6 +59,7 @@ en:
         aud: AUD
         xrp: XRP
         ltc: LTC
+        xlm: XLM
       deposit_currency:
         desc: "To deposit via Bank transfer, please follow these steps:"
         desc_item_1: "1. Submit the form to get the identification code."
@@ -63,7 +69,7 @@ en:
         from: From
         to: To
         deposit_name: Your Name
-        deposit_account: Deposit Account
+        deposit_account: Select Account
         add: Add
         manage: Manage
         amount: Deposit Amount
@@ -89,7 +95,8 @@ en:
         title: ETH Deposit
       deposit_ltc:
         title: LTC Deposit
-
+      deposit_xlm:
+        title: XLM Deposit
 
       deposit_coin:
         address: Address
@@ -138,7 +145,7 @@ en:
       withdraw_inr:
         title: Indian Rupee Withdraw
       withdraw_usd:
-        title: US Dallar Withdraw
+        title: US Dollar Withdraw
       withdraw_aud:
         title: Australian Dollar Deposit
       withdraw_btc:
@@ -149,6 +156,8 @@ en:
         title: ETH Withdraw
       withdraw_ltc:
         title: LTC Withdraw
+      withdraw_xlm:
+        title: XLM Withdraw
       withdraw_coin:
         intro: Please fill in the address and amount, then submit the form. It will be confirmed in 10 minutes
         label: Label
@@ -208,3 +217,5 @@ en:
         usd: USD Market
         aud: AUD Market
         ltc: LTC Market
+        xlm: XLM Market
+        

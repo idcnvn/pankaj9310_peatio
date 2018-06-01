@@ -3,6 +3,7 @@ app.controller 'DepositsController', ['$scope', '$stateParams', '$http', '$filte
   $scope.currency = $stateParams.currency
   $scope.current_user = current_user = $gon.current_user
   $scope.name = current_user.name
+  debugger;
   $scope.fund_sources = $gon.fund_sources
   $scope.account = Account.findBy('currency', $scope.currency)
   $scope.deposit_channel = DepositChannel.findBy('currency', $scope.currency)
@@ -11,8 +12,8 @@ app.controller 'DepositsController', ['$scope', '$stateParams', '$http', '$filte
     depositCtrl = @
     deposit_channel = DepositChannel.findBy('currency', currency)
     account = deposit_channel.account()
-    data = { account_id: account.id, member_id: current_user.id, currency: currency, amount: @deposit.amount, fund_source: @deposit.fund_source }
-
+    data = { account_id: account.id, member_id: current_user.id, currency: currency, amount: @deposit.amount, fund_source: @deposit.fund_source, txid: @deposit.tx_number }
+    debugger;
     $('.form-submit > input').attr('disabled', 'disabled')
 
     $http.post("/deposits/#{deposit_channel.resource_name}", { deposit: data})

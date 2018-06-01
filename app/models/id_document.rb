@@ -14,7 +14,7 @@ class IdDocument < ActiveRecord::Base
   validates_presence_of :name, :id_document_type, :id_document_number, :id_bill_type, allow_nil: true
   validates_uniqueness_of :member
 
-  enumerize :id_document_type, in: {id_card: 0, passport: 1, driver_license: 2}
+  enumerize :id_document_type, in: {id_card: 0, passport: 1, driver_license: 2, aadhar_card: 3, pan_card: 4}
   enumerize :id_bill_type,     in: {bank_statement: 0, tax_bill: 1}
 
   alias_attribute :full_name, :name
