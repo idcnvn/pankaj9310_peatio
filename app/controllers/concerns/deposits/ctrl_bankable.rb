@@ -54,7 +54,7 @@ module Deposits
     def deposit_params
       params[:deposit][:member_id] = current_user.id
       params[:deposit][:account_id] = @account.id
-      params.require(:deposit).permit(:fund_source, :amount, :currency, :account_id, :member_id)
+      params.require(:deposit).permit(:fund_source, :amount, :currency, :account_id, :member_id, :txid)
     end
   end
 end

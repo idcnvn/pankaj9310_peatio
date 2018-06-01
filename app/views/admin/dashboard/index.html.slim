@@ -14,21 +14,22 @@
 
           tbody
             - @currencies_summary.each do |c|
-              tr
-                td: b = c[:name]
-                td.text-right = c[:locked]
-                td.text-right = c[:balance]
-                td.text-right = c[:sum]
+              -if c[:name] != 'XRP' 
+                tr
+                  td: b = c[:name]
+                  td.text-right = c[:locked]
+                  td.text-right = c[:balance]
+                  td.text-right = c[:sum]
 
-                - if c[:coinable]
-                  td.text-right = c[:hot]
-                  - if c[:hot] == 'N/A'
+                  - if c[:coinable]
                     td.text-right = c[:hot]
+                    - if c[:hot] == 'N/A'
+                      td.text-right = c[:hot]
+                    - else
+                      td.text-right = c[:sum] - c[:hot]
                   - else
-                    td.text-right = c[:sum] - c[:hot]
-                - else
-                  td.text-right N/A
-                  td.text-right N/A
+                    td.text-right N/A
+                    td.text-right N/A
       .panel-footer
         span Tips: Locked + Balance = Sum | Hot-Wallet + Cold-Wallet = Sum
 .row

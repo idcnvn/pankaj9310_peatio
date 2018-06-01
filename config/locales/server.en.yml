@@ -366,6 +366,30 @@ en:
     hdfc: Housing Development Finance Corporation
     icic: Industrial Credit and Investment Corporation of India Limited
     paypal: Paypal
+    albk: ALLAHABAD BANK
+    anbk: ANDHRA BANK
+    bob: BANK OF BARODA
+    boi: BANK OF INDIA
+    bom: BANK OF MAHARASHTRA
+    cbk: CANARA BANK
+    cbi: CENTRAL BANK OF INDIA
+    coba: CORPORATION BANK
+    deb: DENA BANK
+    idbi: IDBI BANK LTD.
+    ibh: IND BANK HOUSING LTD.
+    imbs: INDBANK MERCHANT BANKING SERVICES LTD.
+    inbk: INDIAN BANK
+    iob: INDIAN OVERSEAS BANK
+    obc: ORIENTAL BANK OF COMMERCE
+    psb: PUNJAB & SIND BANK
+    pnb: PUNJAB NATIONAL BANK
+    sbi: STATE BANK OF INDIA
+    sbk: SYNDICATE BANK
+    uco: UCO BANK
+    unoi: UNION BANK OF INDIA
+    ubi: UNITED BANK OF INDIA
+    vb: VIJAYA BANK
+
   market:
     currency:
       btc: BTC
