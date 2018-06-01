@@ -350,8 +350,8 @@ input[type="checkbox"] + label:before {
     border: 1px solid #dcdcdc;
     margin-right: 15px;
     border-radius: 10px;
-    line-height: 2em;
-    margin-top: 3%;
+    line-height: 2.2em;
+    margin-top: 5%;
 }
 
 .nav-left li a{
@@ -1401,7 +1401,7 @@ ul{list-style: none;}
 .pad{padding: 18px 15px 0 0;}
 .navbar-nav > li > a{padding: 0 25px 0 0;}
 
-@media (max-width: 300px){
+@media (max-width: 400px){
     .u_container{width: 100%;}
     .border-50{margin: 0 auto; width: 200px;}
     .u_row{margin-top: 20px;}
@@ -1414,4 +1414,5 @@ ul{list-style: none;}
     .u_col{width: 100%;}
     .u_btn{ display: none;}
     .y_btn{width: 40%; float: none; margin: 10px;}
+    .width_page{width: 100%;}
 }
