@@ -1,22 +1,120 @@
+
 header.text-center
   .ribbon
-  
-  .container
-    a href='/'
-      img src='#{image_path 'logo.svg'}' width='336px'
-    section
-        h3 = 'Dalla crypto-currency exchange'
-    #getstart.row
-      - unless current_user
-        .col-xs-4.col-xs-offset-8
-          a href="#{signin_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.signin")
-        - if ENV['WEIBO_AUTH'] == "true"
-          .col-xs-4
-            a href="/auth/weibo" class="btn btn-primary btn-lg btn-block" role="button" = t("header.login_via_weibo")
-        .col-xs-4
-          a href="#{signup_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.signup")
-      - else
-        .col-xs-6.col-xs-offset-9.text-center
-          a href="#{market_path(current_market)}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.getstart")
-          a href="#{funds_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.funds")
-          a href="#{settings_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.settings")
+
+= render 'shared/header.nav'
+
+.bodycontainer
+  #particles
+    .overlay
+      #intro
+        .container
+          .card.transparent-bg-dark
+            .card-heading
+              h1 Buy or Sell Crypto Currency
+            h3 Bringing Cryptocurrency to a million peoples pocket
+            p Buy, sell, trade, store 30 cryptocurrencies, altcoins, tokens like Bitcoin (BTC) , Ethereum (ETH) , Ripple (XRP), Litecoin (LTC), Neo(NEO), Bitcoin Cash (BCC) and many more directly with Rupees (INR) in India.
+            br
+            strong We provide best rates, wallet & security for the digital currency
+            hr
+            h4 DOWNLOAD THE APP NOW
+            br
+            a<> target='_blank' href='/'
+              img src='#{image_path 'playstore.svg'}' width='180px'
+            .clearfix
+
+  .u_grey-bg
+    .u_container.wow.fadeInUp.p-tb
+      .text-center
+        h2 "Cryptocurrencies currently open for trading"
+      .border-50
+      .u_row
+        .col-md-12.u_bg
+          .card.card-crypto.m-b-20
+            .row.flex-center.text-center
+              .col-md-4.y_bg.b-r
+                .img-fluid.mr-1
+                    img src='#{image_path 'flags/crypto/svg/black/btc.svg'}' width='32px'
+                h3 BTC-Bitcoin
+              .col-md-3.t_bg
+                h4 1 BTC
+                h5 939360.00 INR
+              .u_col
+                .u_btn.btn-dark-green.waves-effect.waves-dark
+                  a<> href='/'
+                    img src='http://www.aksharonline.com/images/chart2-128.png' width='20px;'
+                .y_btn.btn-dark-green.waves-effect.waves-dark
+                  a<> target='_blank' href='/' Buy
+                .y_btn.btn-dark-green.waves-effect.waves-dark
+                  a<> target='_blank' href='/' Sell
+                  .clearfix
+
+
+  .container.wow.fadeInUp.p-tb
+    .text-center
+      h2 "How it works"
+    .border-50
+    .row
+      .col-md-4.width_page
+        .card.text-center.top100
+          .mar-top-negative
+          img src='#{image_path 'dummy-img.png'}' width='150'
+          .text-center
+          h3 Register
+          p strong It is more simple then ever imagined
+          br
+
+      .col-md-4.width_page.left_margin
+        .card.text-center.top100
+          .mar-top-negative
+          img src='#{image_path 'dummy-img.png'}' width='150'
+          .text-center
+          h3 Deposit
+          p strong Just transfer in your account at a few clicks
+
+      .col-md-4.width_page.left_margin
+        .card.text-center.top100
+          .mar-top-negative
+          img src='#{image_path 'dummy-img.png'}' width='150'
+          .text-center
+          h3 Trade / Shop
+          p strong Buy-Sell-shop on our platform
+          br
+  .container.p-tb
+    .card-heading.text-center
+      h2 Our Partners
+    .border-50
+    .text-center
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi,veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.
+    #multi-item-example.carousel.slide.carousel-multi-item
+      .controls-top
+        .btn-floating
+          a<> href="#multi-item-example"
+            i.fa.fa-chevron-left
+          a<> href="#multi-item-example"
+            i.fa.fa-chevron-right
+      br
+      .carousel-indicators
+        ol
+          li data-target='#multi-item-example' data-slide-to='0'
+          li data-target='#multi-item-example' data-slide-to='1'
+          li data-target='#multi-item-example' data-slide-to='2'
+      .carousel-inner
+        .carousel-item.active
+          .row
+            .col-md-4.width_page
+              .card
+                img src='#{image_path 'dummy-placeholder.png'}' width='300'
+            .col-md-4.width_page.left_margin
+              .card
+                img src='#{image_path 'dummy-placeholder.png'}' width='300'
+            .col-md-4.width_page.left_margin
+              .card
+                img src='#{image_path 'dummy-placeholder.png'}' width='300'
+
+  .container.p-tb
+
+                  
+
+
+
