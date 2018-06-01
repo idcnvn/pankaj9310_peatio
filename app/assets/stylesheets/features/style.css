@@ -914,7 +914,7 @@ p.sequence:before {
 #particles #intro {
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 15%;
     padding-top: 100px;
     padding-bottom: 100px;
     width: 100%;
