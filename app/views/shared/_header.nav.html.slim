@@ -1,0 +1,33 @@
+header
+  .navbar.fixed-top.navbar-expand-lg.navbar-light.scrolling-navbar
+    .navbar-brand
+      a<> target='_blank' href='/'
+       img src='#{image_path 'logo.svg'}' width='100px'
+    .navbar-toggler
+      f.button type="button" data-toggle="collapse" data-target="#navbarSupportedContent-5" aria-controls="navbarSupportedContent-5" aria-expanded="false" aria-label="Toggle navigation"
+      .navbar-toggler-icon
+      	span
+	#navbarSupportedContent-5.collapse.navbar-collapse
+		ul.nav.navbar-nav.nav-left
+			li.nav-item
+				.nav-link.waves-effect.waves-light
+					a<> target='_blank' href='https://blog.godalla.com/' Blog
+			li.nav-item
+				.nav-link.waves-effect.waves-light
+					a<> target='_blank' href='https://blog.godalla.com/' About Us
+			li.nav-item
+				.nav-link.waves-effect.waves-light
+					a<> target='_blank' href='https://blog.godalla.com/' Contact Us
+			li.nav-item
+				.nav-link.waves-effect.waves-light
+					a<> target='_blank' href='https://blog.godalla.com/' Buy/ Sell
+			li.nav-item
+				.nav-link.waves-effect.waves-light
+					a<> target='_blank' href='https://blog.godalla.com/' Wallet
+		ul.navbar-nav.ml-auto.mr-1.pull_right.pad
+		      = render partial: 'shared/header_account_balance' if current_user && controller_name == 'markets'
+		      = render partial: 'shared/header_profile_setting' if current_user
+		      = top_nav_link(t('header.signin'), signin_path, '') unless current_user
+		      = top_nav_link(t('header.signup'), signup_path, '') unless current_user
+		      = render partial: 'shared/header_lang_sel'
+

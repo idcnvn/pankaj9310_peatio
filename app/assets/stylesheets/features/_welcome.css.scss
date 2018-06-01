@@ -1,11 +1,12 @@
 #welcome-index {
   header {
+    width:100%;
     overflow: hidden;
     position: relative;
     color: rgba(83,102,120, 1.0);
 
     .container {
-      padding-top: 60px;
+      width:100%;  
     }
 
     .ribbon a:hover {
@@ -28,7 +29,7 @@
       font-size: 20px;
       color: white;
       height: 45px;
-      width: 330px;
+      width: 100%;
       padding: 8px;
     }
 

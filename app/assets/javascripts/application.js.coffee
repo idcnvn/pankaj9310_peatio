@@ -17,6 +17,14 @@
 #= require jquery-timing.min
 #= require qrcode
 #= require cookies.min
+#= require mdb.min
+#= require mdb
+#= require popper.min
+#= require particles
+#= require compiled.min
+#= require 3d-particles
+#= require  jquery-3.2.1.min
+
 
 #= require ./lib/notifier
 #= require ./lib/pusher_connection
