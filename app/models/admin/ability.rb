@@ -21,6 +21,7 @@ module Admin
       can :manage, ::Deposits::Ether
       can :manage, ::Deposits::Ripple
       can :manage, ::Deposits::Litecoin
+      can :manage, ::Deposits::Stellar
 
       can :menu, Withdraw
       can :manage, ::Withdraws::Bank
@@ -28,6 +29,7 @@ module Admin
       can :manage, ::Withdraws::Ether
       can :manage, ::Withdraws::Ripple
       can :manage, ::Withdraws::Litecoin
+      can :manage, ::Withdraws::Stellar
 
     end
   end

@@ -3,6 +3,7 @@
     li.active: a.btc-proof href="#btc-proof" data-toggle="tab" == t('.verify-btc')
     li:        a.xrp-proof href="#xrp-proof" data-toggle="tab" == t('.verify-xrp')
     li:        a.ltc-proof href="#ltc-proof" data-toggle="tab" == t('.verify-ltc')
+    li:        a.xlm-proof href="#xlm-proof" data-toggle="tab" == t('.verify-xlm')
     li:        a.cny-proof href="#cny-proof" data-toggle="tab" == t('.verify-cny')
     li:        a.inr-proof href="#inr-proof" data-toggle="tab" == t('.verify-inr')
     li:        a.usd-proof href="#usd-proof" data-toggle="tab" == t('.verify-usd')
@@ -30,6 +31,13 @@
           == t("currency.icon.ltc")
           = @ltc_proof.sum
       = render 'liability_data', account: @ltc_account, proof: @ltc_proof
+    #xlm-proof.tab-pane: .trade-wrapper
+      .assets
+        span.title = t('.xlm-assets-total')
+        span.currency
+          == t("currency.icon.xlm")
+          = @xlm_proof.sum
+      = render 'liability_data', account: @xlm_account, proof: @xlm_proof
 
     #cny-proof.tab-pane:        .trade-wrapper
       .assets

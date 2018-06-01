@@ -72,3 +72,10 @@
   fee: 0.0005
   inuse: true
   type: WithdrawChannelLitecoin
+- id: 1100
+  key: stellar
+  currency: xlm
+  fixed: 8
+  fee: 0.0005
+  inuse: true
+  type: WithdrawChannelStellar
