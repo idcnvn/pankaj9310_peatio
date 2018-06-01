@@ -5,24 +5,6 @@ en:
     cancel: Cancel
     confirm: Confirm
     banks:
-      icbc: Industryand Commercial Bank of China
-      cbc: Construction Bank of China
-      bc: Bank of China
-      bcm: Bank of Communications
-      abc: Agriculture Bank of China
-      cmb: China Merchants Bank Ltd
-      cmbc: China Minsheng Banking Co., Ltd
-      cncb: China CITIC Bank
-      hxb: Hua Xia Bank Co., Ltd.
-      cib: Industrial Bank Co., Ltd
-      spdb: Shanghai Pudong Development Bank
-      bob: Bank of Beijing
-      ceb: China Everbright Bank CO.LTD
-      sdb: Shenzhen Development Bank
-      pab: Ping An Bank Co., Ltd.
-      gdb: Guangdong Development Bank
-      psbc: Postal Savings Bank of China
-      bos: Bank of Shanghai
       sbi: State Bank of India
       boi: Bank of India
       cbi: Central Bank of India
@@ -63,7 +45,7 @@ en:
         from: From
         to: To
         deposit_name: Your Name
-        deposit_account: Deposit Account
+        deposit_account: Select Account
         add: Add
         manage: Manage
         amount: Deposit Amount
@@ -138,7 +120,7 @@ en:
       withdraw_inr:
         title: Indian Rupee Withdraw
       withdraw_usd:
-        title: US Dallar Withdraw
+        title: US Dollar Withdraw
       withdraw_aud:
         title: Australian Dollar Deposit
       withdraw_btc:

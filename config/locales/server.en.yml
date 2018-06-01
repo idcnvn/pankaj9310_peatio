@@ -329,23 +329,6 @@ en:
           sum: limit sum price %{l} ~ %{h}
           precision: minimum precision %{p}
   banks:
-    icbc: Industryand Commercial Bank of China
-    cbc: Construction Bank of China
-    bc: Bank of China
-    bcm: Bank of Communications
-    abc: Agriculture Bank of China
-    cmb: China Merchants Bank Ltd
-    cmbc: China Minsheng Banking Co., Ltd
-    cncb: China CITIC Bank
-    hxb: Hua Xia Bank Co., Ltd.
-    cib: Industrial Bank Co., Ltd
-    spdb: Shanghai Pudong Development Bank
-    bob: Bank of Beijing
-    ceb: China Everbright Bank CO.LTD
-    sdb: Shenzhen Development Bank
-    pab: Ping An Bank Co., Ltd.
-    gdb: Guangdong Development Bank
-    psbc: Postal Savings Bank of China
     sbi: State Bank of India
     boi: Bank of India
     cbi: Central Bank of India
@@ -1168,15 +1151,14 @@ en:
           verified: Verified
           hint: "Verified number %{hint}"
         two_factor_auth:
-          title: Two-Factor Authentication
-          description: Two-Factor Authentication provides another layer of security
+          title: Google Two-Factor Authentication
+          description: Google Two-Factor Authentication provides another layer of security
             to your account.
           enable: Enable
           disable: Disable
         verification:
-          title: Verify Account
-          description: Help keep the bad guys out of your account by using both your
-            password and your phone
+          title: Verify KYC
+          description: Please Verify Your KYC To Enable Deposits
           go: Submit
           verified: Verified
         asset_passwords:
@@ -1226,7 +1208,7 @@ en:
       settings:
         panel: Settings
         index:
-          intro: Admin and revise your profile.
+          intro: Welcome to Dalla Exchange.
       api_tokens:
         panel: API Tokens
         index:
@@ -1253,7 +1235,7 @@ en:
       balance: Account
     verify:
       google_auths:
-        panel: Two-Factor Authentication
+        panel: Google Two-Factor Authentication
         edit:
           title: Disable Two-Factor Authentication
           intro: If you have a new phone, you can disable Two-Factor Authentication in the old phone, and enable Two-Factor Authentication  with the new one.
@@ -1293,7 +1275,7 @@ en:
         panel: My Account
         title: Reset Password
     two_factors:
-      panel: Two Factor Authenticator
+      panel: Google Two Factor Authenticator
   simple_form:
     placeholders:
       deposit:
@@ -1746,6 +1728,7 @@ en:
         passport: Passport
         aadhar_card: Aadhar Card
         driver_license: Driver's License
+        pan_card: Pan Card
       id_bill_type:
         bank_statement: Bank Statement
         tax_bill: Tax Bill
@@ -2170,7 +2153,7 @@ en:
           not_activated_yet: The Google Authenticator hasn't been set yet.
       update:
         alert: Password for authentication is incorrect, please re-enter.
-        notice: Two-Factor Authentication has been successfully Enabled.
+        notice: Google Two-Factor Authentication has been successfully Enabled.
         sms_two_factor_error: SMS Verification code is incorrect, please re-enter.
       destroy:
         alert: Password for authentication is incorrect, please re-enter.

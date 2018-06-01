@@ -21,6 +21,7 @@ module Private
 
     def gen_address
       current_user.accounts.each do |account|
+        # binding.pry
         next if not account.currency_obj.coin?
 
         if account.payment_addresses.blank?
