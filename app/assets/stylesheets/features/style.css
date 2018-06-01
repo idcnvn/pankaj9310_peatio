@@ -33,10 +33,6 @@ body{
     box-shadow: 0 0px 2px rgba(0,0,0,.20);
 }
 
-.navbar.scrolling-navbar{
-    max-width: 1800px;
-    margin: 0px auto;
-}
 *::-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
@@ -298,6 +294,7 @@ input[type="checkbox"] + label:before {
     background-color: #ffffff;
     box-shadow: none;
     padding:0;
+    float: left;
 }
 
 .top-nav-collapse {
@@ -1400,6 +1397,8 @@ p.sequence:before {
 ul{list-style: none;}
 .pad{padding: 18px 15px 0 0;}
 .navbar-nav > li > a{padding: 0 25px 0 0;}
+.navbar-collapse.collapse{background: white;}
+.navbar-nav li a:hover{background: none;}
 
 @media (max-width: 400px){
     .u_container{width: 100%;}

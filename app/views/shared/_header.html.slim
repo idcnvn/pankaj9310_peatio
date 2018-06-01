@@ -1,34 +1,27 @@
-header.navbar.fixed-top.navbar-expand-lg.navbar-light.scrolling-navbar
-  .navbar-brand
-    a<> target='_blank' href='/'
-      img src='#{image_path 'logo.svg'}' width='100px'
+header
+  .navbar.fixed-top.navbar-expand-lg.navbar-light.scrolling-navbar
+    .navbar-brand
+      a<> target='_blank' href='/'
+       img src='#{image_path 'logo.svg'}' width='100px'
+    .navbar-toggler
+      f.button type="button" data-toggle="collapse" data-target="#navbarSupportedContent-5" aria-controls="navbarSupportedContent-5" aria-expanded="false" aria-label="Toggle navigation"
+      .navbar-toggler-icon
+        span
+  #navbarSupportedContent-5.collapse.navbar-collapse
+    ul.nav.navbar-nav.nav-left
+      li.nav-item
+          = top_nav_link(t('header.market'), market_path(current_market.id), 'exchange', target: true)
+          = top_nav_link(t('header.funds'), funds_path, 'money', controllers: ['funds']) if current_user
+          = top_nav_link(t('header.history'), order_history_path, 'book', controllers: ['history']) if current_user
 
-  .collapse navbar-collapse#navbarSupportedContent-5
-  ul.nav.navbar-nav.nav-left
-      = top_nav_link(t('header.market'), market_path(current_market.id), 'exchange', target: true)
-      = top_nav_link(t('header.funds'), funds_path, 'money', controllers: ['funds']) if current_user
-      = top_nav_link(t('header.assets'), exchange_assets_path, 'bar-chart-o')
-      = top_nav_link(t('header.history'), order_history_path, 'book', controllers: ['history']) if current_user
+      li.nav-item
+        .nav-link.waves-effect.waves-light
+          a<> target='_blank' href='http://blog.godalla.com/' Blog
 
-    li.nav-item
-      .nav-link.waves-effect.waves-light
-      top_nav_link(t('header.history'), order_history_path, 'book', controllers: ['history']) if current_user
-    li.nav-item
-      .nav-link.waves-effect.waves-light
-      a<> target='_blank' href='about-us' About us
-    li.nav-item
-      .nav-link.waves-effect.waves-light
-      a<> target='_blank' href='contact-us' Contact Us
-    li.nav-item
-      .nav-link.waves-effect.waves-light
-      a<> target='_blank' href='/' Buy Sell
-    li.nav-item
-      .nav-link.waves-effect.waves-light
-      a<> target='_blank' href='/' Wallet
+    ul.navbar-nav.ml-auto.mr-1.pull_right.pad
+          = render partial: 'shared/header_account_balance' if current_user && controller_name == 'markets'
+          = render partial: 'shared/header_profile_setting' if current_user
+          = top_nav_link(t('header.signin'), signin_path, '') unless current_user
+          = top_nav_link(t('header.signup'), signup_path, '') unless current_user
+          = render partial: 'shared/header_lang_sel'
 
-  ul.nav.navbar-nav.navbar-right
-      = render partial: 'shared/header_account_balance' if current_user && controller_name == 'markets'
-      = render partial: 'shared/header_profile_setting' if current_user
-      = top_nav_link(t('header.signin'), signin_path, '') unless current_user
-      = top_nav_link(t('header.signup'), signup_path, '') unless current_user
-      = render partial: 'shared/header_lang_sel'
