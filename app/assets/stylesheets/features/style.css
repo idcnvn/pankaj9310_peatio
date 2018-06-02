@@ -344,11 +344,8 @@ input[type="checkbox"] + label:before {
 }
 
 .nav-left li {
-    border: 1px solid #dcdcdc;
-    margin-right: 15px;
-    border-radius: 10px;
     line-height: 2.2em;
-    margin-top: 3%;
+    padding-top: 12px;
 }
 
 .nav-left li a{
@@ -1388,11 +1385,11 @@ p.sequence:before {
 .u_container{max-width: 90%; margin: 10px auto;}
 .u_row{display:flex;flex-wrap:wrap;}
 .y_bg{width: 30%; display: inline-flex;}
-.t_bg{width: 20%;}
+.t_bg{width: 35%;}
 .img-fluid{padding:15px 30px;}
-.u_col{width: 45%; float: right;}
+.u_col{width: 35%; float: right;}
 .u_btn{display: inline-block; padding:10px; text-align: center; line-height: 1.5; border-radius: .25rem; float: left; margin: 8px; width: 30%; box-shadow: 1px 1px 5px 1px #888888;}
-.y_btn{font-weight: bold; background: #388E3C !important; display: inline-block; padding:10px; text-align: center; line-height: 1.5; border-radius: .25rem; float: left; margin: 8px; width: 30%; box-shadow: 1px 1px 5px 1px #888888;}
+.y_btn{font-weight: bold; background: #388E3C !important; display: inline-block; padding:10px; text-align: center; line-height: 1.5; border-radius: .25rem; float: left; margin: 8px; width: 45%; box-shadow: 1px 1px 5px 1px #888888;}
 .y_btn a{color:#fff; text-decoration: none;}
 ul{list-style: none;}
 .pad{padding: 18px 15px 0 0;}
