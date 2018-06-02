@@ -30,7 +30,6 @@ body{
     color: #4f4f4f;
     max-width: 1800px;
     margin: 0px auto;
-    box-shadow: 0 0px 2px rgba(0,0,0,.20);
 }
 
 *::-webkit-scrollbar-track
@@ -888,19 +887,17 @@ p.sequence:before {
 }
 
 #particles {
-    background: #56ab2f;
-    background: -webkit-linear-gradient(125deg, #f0f0f0 0%, #ffffff 30%, #ffffff 70%, #f0f0f0 100%);
-    background: linear-gradient(125deg, #f0f0f0 0%, #ffffff 30%, #ffffff 70%, #f0f0f0 100%);    
+    background-image: url('Untitled-1.jpg');
     width: 100%;
     overflow: hidden;
     position: relative;
-    height: calc(100vh - 60px);
+    height: calc(60vh - 40px);
     max-height: 700px;
 }
 
 #particles .overlay {
   position: absolute;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.3);
   top:0;
   left: 0;
   width: 100%;
@@ -911,8 +908,7 @@ p.sequence:before {
 #particles #intro {
     position: absolute;
     left: 0;
-    top: 15%;
-    padding-top: 100px;
+    top: 10%;
     padding-bottom: 100px;
     width: 100%;
 }
