@@ -4,7 +4,8 @@
       ul.dropdown-menu
         li: a.active data-name='all' href="javascript:;" = t('.all_html')
         - @market_groups.each do |name|
-          li: a data-name=name href="javascript:;" = t(".#{name}_html")
+          -if name == @currency || name == 'eth' || name == 'btc' || name == 'ltc'
+            li: a data-name=name href="javascript:;" = t(".#{name}_html")
   #market_list
     .panel.panel-default
       .panel-body.panel-body-head
@@ -18,10 +19,11 @@
         table.table.table-hover.markets.all
           tbody
             - @markets.each do |market|
-              tr.market id="market-list-#{market.id}" class="quote-#{market.quote_unit}" data-market=market.id
-                td.col-xs-4.name
-                  = link_to market.name, market_path(market)
-                td.col-xs-15.price
-                  = Global[market.id].ticker[:last]
-                td.col-xs-5.change
-                  | +0.00%
+              -if market.quote_unit == @currency || market.quote_unit == 'eth' || market.quote_unit == 'btc' || market.quote_unit == 'ltc'
+                tr.market id="market-list-#{market.id}" class="quote-#{market.quote_unit}" data-market=market.id
+                  td.col-xs-4.name
+                    = link_to market.name, market_path(market)
+                  td.col-xs-15.price
+                    = Global[market.id].ticker[:last]
+                  td.col-xs-5.change
+                    | +0.00%

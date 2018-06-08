@@ -5,7 +5,7 @@
       .input-group.price
         label.input-group-addon = t('.price')
         span.label.label-danger.hint-price-disadvantage
-        = f.text_field :price, class: 'form-control'
+        = f.text_field :price, value: @coin_buy, class: 'form-control'
         span.input-group-addon = t(market.bid['currency'], scope: 'market.currency')
       .input-group.amount
         label.input-group-addon = t('.amount')

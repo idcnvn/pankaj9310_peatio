@@ -17,7 +17,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_market
-    @current_market ||= Market.find_by_id(params[:market]) || Market.find_by_id(cookies[:market_id]) || Market.first
+    country
+    @current_market ||= Market.find_by_id(params[:market]) || Market.find_by_id(@country)  || Market.find_by_id(cookies[:market_id]) || Market.first
   end
 
   def redirect_back_or_settings_page
@@ -39,7 +40,23 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, alert: t('activations.new.login_required')
     end
   end
-
+  def country
+    require 'rest-client'
+    country_currency_hash = {'IN' => 'inr','CN' => 'cny', 'US' =>'usd', 'AU' =>'aud'}
+    # resp = RestClient.get('https://geoip-db.com/json/', headers={})
+    begin
+      resp = RestClient::Request.execute(method: :get, url: 'https://geoip-db.com/json/',
+                          timeout: 10)
+      country_code = JSON.parse(resp)['country_code']
+      if country_currency_hash[country_code].nil?
+        @currency = 'usd'
+      else
+        @currency = country_currency_hash[country_code]
+      end
+    rescue => ex
+      @currency = 'usd'
+    end
+  end
   def auth_activated!
     redirect_to settings_path, alert: t('private.settings.index.auth-activated') unless current_user.activated?
   end
