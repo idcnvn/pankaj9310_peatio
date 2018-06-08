@@ -297,7 +297,6 @@ input[type="checkbox"] + label:before {
 }
 
 .top-nav-collapse {
-    box-shadow: 0 3px 5px rgba(0,0,0,.10);
     padding: 0px !important;
 }
 
@@ -489,11 +488,10 @@ input[type="checkbox"] + label:before {
 }
 .card .card-heading {
     font-size: 2rem;
-    line-height: 2rem;
-    color: #56ab2f;
+    color: #FFF;
+    font-weight: bold;
     padding-left: 15px;
     margin-left: -20px;
-    border-left: 5px solid #56ab2f;
     margin-bottom: 20px;
 }
 
@@ -887,11 +885,11 @@ p.sequence:before {
 }
 
 #particles {
-    background-image: url('Untitled-1.jpg');
+    background-image: image-url('Untitled-1.jpg');
     width: 100%;
     overflow: hidden;
     position: relative;
-    height: calc(60vh - 40px);
+    height: calc(70vh - 30px);
     max-height: 700px;
 }
 
@@ -908,17 +906,17 @@ p.sequence:before {
 #particles #intro {
     position: absolute;
     left: 0;
-    top: 10%;
-    padding-bottom: 100px;
+    top: 25%;
     width: 100%;
 }
 
 #particles #intro .transparent-bg-dark {
     display: block;
-    background-color: #fffffff0;
-    color: #4f4f4f;
+    background:none;
+    color: #FFF;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px #00000030;
+    box-shadow: none;
+    font-weight: bold;
 }
 
 .popup-icon{
@@ -1383,7 +1381,7 @@ p.sequence:before {
 .y_bg{width: 30%; display: inline-flex;}
 .t_bg{width: 35%;}
 .img-fluid{padding:15px 30px;}
-.u_col{width: 35%; float: right;}
+.u_col{width: 35%; float: left;}
 .u_btn{display: inline-block; padding:10px; text-align: center; line-height: 1.5; border-radius: .25rem; float: left; margin: 8px; width: 30%; box-shadow: 1px 1px 5px 1px #888888;}
 .y_btn{font-weight: bold; background: #388E3C !important; display: inline-block; padding:10px; text-align: center; line-height: 1.5; border-radius: .25rem; float: left; margin: 8px; width: 45%; box-shadow: 1px 1px 5px 1px #888888;}
 .y_btn a{color:#fff; text-decoration: none;}
@@ -1409,4 +1407,6 @@ ul{list-style: none;}
     .width_page{width: 100%;}
 }
 
-#welcome-index header{overflow:initial;}
+#welcome-index header{overflow:initial; position: fixed; z-index: 10; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);}
+.l_btn{font-weight: bold; background: #FFF !important; display: inline-block; padding:10px; text-align: center; line-height: 1.5; border-radius: .25rem; float: left; margin: 8px 0 0 0; width: 45%; box-shadow: 1px 1px 5px 1px #888888;}
+.l_btn a{color:#000; text-decoration: none;}
