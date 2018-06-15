@@ -4,13 +4,15 @@ module Worker
     def process(payload, metadata, delivery_info)
       payload.symbolize_keys!
 
-      sleep 0.5 # nothing result without sleep by query gettransaction api
+      sleep 1 # nothing result without sleep by query gettransaction api
 
       channel_key = payload[:channel_key]
       txid = payload[:txid]
 
       channel = DepositChannel.find_by_key(channel_key)
       if channel.currency_obj.code == 'eth'
+        binding.pry
+        Rails.logger.error "ETH Deposit is called"
         raw  = get_raw_eth txid
         raw.symbolize_keys!
         deposit_eth!(channel, txid, 1, raw)
@@ -24,6 +26,7 @@ module Worker
     end
 
     def deposit_eth!(channel, txid, txout, raw)
+      Rails.logger.info "deposit eth"
       ActiveRecord::Base.transaction do
         unless PaymentAddress.where(currency: channel.currency_obj.id, address: raw[:to]).first
           Rails.logger.info "Deposit address not found, skip. txid: #{txid}, txout: #{txout}, address: #{raw[:to]}, amount: #{raw[:value].to_i(16) / 1e18}"

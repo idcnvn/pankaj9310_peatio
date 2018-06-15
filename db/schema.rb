@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405053726) do
+ActiveRecord::Schema.define(version: 20180612063019) do
 
   create_table "account_versions", force: true do |t|
     t.integer  "member_id"
@@ -210,6 +210,32 @@ ActiveRecord::Schema.define(version: 20150405053726) do
     t.boolean  "api_disabled", default: false
     t.string   "nickname"
   end
+
+  create_table "money_transfers", force: true do |t|
+    t.string   "amount_send"
+    t.string   "amount_recived"
+    t.string   "reciver_bank_name"
+    t.string   "reciver_bank_branch"
+    t.string   "reciver_bank_account"
+    t.string   "reciver_name"
+    t.string   "reciver_bank_ifsc"
+    t.string   "reciver_mobile"
+    t.string   "reciver_email"
+    t.string   "tx_id"
+    t.string   "relationship_with_reciver"
+    t.string   "transfer_mode",             default: "wallet"
+    t.string   "sender_currency_id"
+    t.string   "reciver_currency_id"
+    t.string   "transfer_fee"
+    t.integer  "member_id"
+    t.integer  "source_id"
+    t.string   "source_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "money_transfers", ["member_id"], name: "index_money_transfers_on_member_id", using: :btree
+  add_index "money_transfers", ["source_id", "source_type"], name: "index_money_transfers_on_source_id_and_source_type", using: :btree
 
   create_table "oauth_access_grants", force: true do |t|
     t.integer  "resource_owner_id", null: false

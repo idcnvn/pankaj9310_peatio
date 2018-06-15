@@ -8,6 +8,7 @@
     li:        a.inr-proof href="#inr-proof" data-toggle="tab" == t('.verify-inr')
     li:        a.usd-proof href="#usd-proof" data-toggle="tab" == t('.verify-usd')
     li:        a.aud-proof href="#aud-proof" data-toggle="tab" == t('.verify-aud')
+    li:        a.eth-proof href="#eth-proof" data-toggle="tab" == t('.verify-eth')
 
   .tab-content
     #btc-proof.tab-pane.active: .trade-wrapper
@@ -67,3 +68,10 @@
           == t("currency.icon.aud")
           = @aud_proof.sum
       = render 'liability_data', account: @aud_account, proof: @aud_proof
+    #eth-proof.tab-pane:        .trade-wrapper
+      .assets
+        span.title = t('.eth-assets-total')
+        span.currency
+          == t("currency.icon.eth")
+          = @eth_proof.sum
+      = render 'liability_data', account: @eth_account, proof: @eth_proof

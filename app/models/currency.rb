@@ -51,16 +51,20 @@ class Currency < ActiveYamlBase
   end
 
   def refresh_balance
+    puts balance_cache_key
+    puts api.safe_getbalance
     Rails.cache.write(balance_cache_key, api.safe_getbalance) if coin?
   end
 
   def blockchain_url(txid)
     raise unless coin?
+    puts "txid.to_s" + txid.to_s
     blockchain.gsub('#{txid}', txid.to_s)
   end
 
   def address_url(address)
     raise unless coin?
+    puts "address_url" + address
     self[:address_url].try :gsub, '#{address}', address
   end
 

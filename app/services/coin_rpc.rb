@@ -9,9 +9,9 @@ class CoinRPC
 
   def initialize(uri)
     @uri = URI.parse(uri)
-    @rest_uri = URI.parse(c[:rest_api]) if c[:rest_api]
-    puts @rest_uri
-    puts @uri
+    @rest_uri = URI.parse(uri)
+    # puts @rest_uri
+    # puts @uri
   end
 
   def self.[](currency)
@@ -33,10 +33,15 @@ class CoinRPC
     def handle(name, *args)
       post_body = { 'method' => name, 'params' => args, 'id' => 'jsonrpc' }.to_json
       resp = JSON.parse( http_post_request(post_body) )
-      raise JSONRPCError, resp['error'] if resp['error']
-      result = resp['result']
-      result.symbolize_keys! if result.is_a? Hash
-      result
+      begin
+        # raise JSONRPCError, resp['error'] if resp['error']
+        result = resp['result']
+        result.symbolize_keys! if result.is_a? Hash
+        result
+      rescue
+        'N/A'
+      end
+
     end
     def http_post_request(post_body)
       http    = Net::HTTP.new(@uri.host, @uri.port)
@@ -283,7 +288,7 @@ class CoinRPC
 
     def safe_getbalance
       begin
-        (open(@uri.host + '/cgi-bin/total.cgi').read.rstrip.to_f)
+        (open(@uri + '/cgi-bin/total.cgi').read.rstrip.to_f)
       rescue
         'N/A'
       end

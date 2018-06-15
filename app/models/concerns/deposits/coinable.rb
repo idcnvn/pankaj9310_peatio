@@ -29,6 +29,7 @@ module Deposits
     end
 
     def blockchain_url
+      puts "currency_obj"+currency_obj
       currency_obj.blockchain_url(txid)
     end
 

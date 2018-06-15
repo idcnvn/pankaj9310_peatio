@@ -10,6 +10,7 @@ module Private
       @btc_proof   = Proof.current :btc
       @xrp_proof   = Proof.current :xrp
       @ltc_proof   = Proof.current :ltc
+      @eth_proof   = Proof.current :eth
       @xlm_proof   = Proof.current :xlm
       @cny_proof   = Proof.current :cny
       @inr_proof   = Proof.current :inr
@@ -21,6 +22,7 @@ module Private
         @xrp_account = current_user.accounts.with_currency(:xrp).first
         @xlm_account = current_user.accounts.with_currency(:xlm).first
         @ltc_account = current_user.accounts.with_currency(:ltc).first
+        @eth_account = current_user.accounts.with_currency(:eth).first
         @cny_account = current_user.accounts.with_currency(:cny).first
         @inr_account = current_user.accounts.with_currency(:inr).first
         @aud_account = current_user.accounts.with_currency(:aud).first

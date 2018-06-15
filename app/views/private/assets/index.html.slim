@@ -19,6 +19,8 @@
         a = t('.ltc-assets')
       li        data-scroll-nav='8'
         a = t('.xlm-assets')
+      li        data-scroll-nav='9'
+        a = t('.eth-assets')
 
     - if current_user
       div data-scroll-index=0 = render 'liability_proof'
@@ -31,3 +33,4 @@
     div data-scroll-index=6 = render 'xrp_assets'
     div data-scroll-index=7 = render 'ltc_assets'
     div data-scroll-index=8 = render 'xlm_assets'
+    div data-scroll-index=9 = render 'eth_assets'

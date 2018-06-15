@@ -46,6 +46,7 @@ Peatio::Application.routes.draw do
   resources :two_factors, only: [:show, :index, :update]
 
   scope module: :private do
+    resources :money_transfers
     resource  :id_document, only: [:edit, :update]
 
     resources :settings, only: [:index]

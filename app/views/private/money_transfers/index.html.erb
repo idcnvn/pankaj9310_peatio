@@ -1,0 +1,41 @@
+<h1>Listing Money Trasfer Details</h1>
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Send Money</th>
+      <th>Recive Money</th>
+      <th>Bank Name</th>
+      <th>Bank Branch name</th>
+      <th>Account number</th>
+      <th>Bank IFSC</th>
+      <th>Reciver Name</th>
+      <th>Reciver Email</th>
+      <th>Reciver Mobile</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @money_transfers.each do |money_transfer| %>
+      <tr>
+        <td><%= money_transfer.amount_send %></td>
+        <td><%= money_transfer.amount_recived %></td>
+        <td><%= money_transfer.reciver_bank_name %></td>
+        <td><%= money_transfer.reciver_bank_branch %></td>
+        <td><%= money_transfer.reciver_bank_account %></td>
+        <td><%= money_transfer.reciver_bank_ifsc %></td>
+        <td><%= money_transfer.reciver_name %></td>
+        <td><%= money_transfer.reciver_email %></td>
+        <td><%= money_transfer.reciver_mobile %></td>
+        <td><%= link_to "Show", money_transfer %></td>
+        <td><%= link_to "Edit", edit_money_transfer_path(money_transfer) %></td>
+        <td><%= link_to "Destroy", money_transfer, method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ 
+<br>
+ 
+<%= link_to "New money_transfer", new_money_transfer_path %>

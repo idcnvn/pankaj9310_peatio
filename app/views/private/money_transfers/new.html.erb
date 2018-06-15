@@ -1,0 +1,52 @@
+<%= form_for @money_transfer, url: {action: "create"}, html: {class: "nifty_form"} do |f| %> 
+	<p><label>Base currency</label>
+	<%= f.text_field :sender_currency_id, :value => @currency, :readonly => true %>
+	<br/><b>Available Balance = <%=@available_balance%> </b>
+	<p><label for = "amount_send">Send amount</label>:
+  	<%= f.text_field :amount_send %>
+  	<p><label>Select currency</label>
+	<%= f.select :reciver_currency_id, @fait_currencies %>
+  	<p><label>Total Amount </label></p>
+  	<%= f.text_field :amount_recived, :readonly => true %>
+  	<p><label>Reciver Bank name</label></p>
+  	<%= f.text_field :reciver_bank_name %>
+  	<p><label>Reciver Bank branch</label></p>
+  	<%= f.text_field :reciver_bank_branch %>
+  	<p><label>Reciver Bank Account no</label></p>
+  	<%= f.text_field :reciver_bank_account %>
+  	<p><label>Reciver Bank ifsc code</label></p>
+  	<%= f.text_field :reciver_bank_ifsc %>
+  	<p><label>Reciver name</label></p>
+  	<%= f.text_field :reciver_name %>
+  	<p><label>Reciver email</label></p>
+  	<%= f.text_field :reciver_email %>
+  	<p><label>Reciver mobile</label></p>
+  	<%= f.text_field :reciver_mobile %>
+  	<p><label>Reciver Relationship</label></p>
+  	<%= f.text_field :relationship_with_reciver %>
+
+  	<%= f.submit "Create" %>
+<% end %>
+ 
+ <script>
+   $('#money_transfer_reciver_currency_id').change(function(){
+      var to = $(this).val();
+      var data = {"__f": "<%=@currency%>", "__t": to};
+      var rate = "";
+      var sender_amount = 0;
+      sender_amount = $('#money_transfer_amount_send').val();
+      $.ajax({
+        url: 'http://18.188.33.75/dalla/Server/app/convert.php',
+        type: 'post',
+        data: JSON.stringify(data),
+        dataType: 'json',
+        async: false,
+        cache: true,
+        success:function(resp){
+          rate = resp.rate;
+          $('#money_transfer_amount_recived').val(rate*sender_amount)
+          debugger;
+        }
+      });
+    });
+</script>
